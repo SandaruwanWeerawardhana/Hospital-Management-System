@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="623.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Register.RegisterSelectionFormController">
+   <children>
+      <ImageView fitHeight="609.0" fitWidth="447.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/login2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="160.0" fitWidth="198.0" layoutX="595.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/Logo_enhanced.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="509.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Select Your Role" textAlignment="CENTER" wrappingWidth="322.1368408203125">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.4100378787878788" startY="0.2500000144496109">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.13746783137321472" green="0.34736841917037964" blue="0.024444444105029106" opacity="0.9800000190734863" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.01759999990463257" green="0.043542131781578064" blue="0.2199999988079071" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <JFXButton id="btnLogin" fx:id="btnDoctor" layoutX="534.0" layoutY="217.0" onAction="#btnDoctorAction" prefHeight="46.0" prefWidth="271.0" style="-fx-background-color: #006600; -fx-border-radius: rounded; -fx-border-width: 5px;" text="Doctor" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </JFXButton>
+      <JFXButton id="btnLogin" fx:id="btnReceptionist" layoutX="534.0" layoutY="320.0" onAction="#btnReceptionistAction" prefHeight="46.0" prefWidth="271.0" style="-fx-background-color: #006600; -fx-border-radius: rounded; -fx-border-width: 5px;" text="Receptionist" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </JFXButton>
+      <JFXButton id="btnLogin" fx:id="btnAdmin" layoutX="534.0" layoutY="421.0" onAction="#btnAdminAction" prefHeight="46.0" prefWidth="271.0" style="-fx-background-color: #006600; -fx-border-radius: rounded; -fx-border-width: 5px;" text="Admin" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
