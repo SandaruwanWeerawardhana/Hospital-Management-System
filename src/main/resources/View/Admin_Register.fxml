@@ -1,14 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="edu.icet.hospital_system.controller.Register.AdminFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="623.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Register.AdminFormController">
+   <children>
+      <ImageView fitHeight="609.0" fitWidth="455.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/login2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="207.0" layoutX="570.0" layoutY="-26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/Logo_enhanced.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="460.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Sing Up Admin Account" textAlignment="CENTER" wrappingWidth="418.1368408203125">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3333333179806218" startY="0.2878788023283988">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.24210526049137115" green="0.005380116868764162" blue="0.005380116868764162" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <JFXTextField fx:id="txtContactNumber" layoutX="530.0" layoutY="308.0" prefHeight="26.0" prefWidth="279.0" promptText="Contact Number">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </JFXTextField>
+      <JFXButton id="btnLogin" fx:id="btnSingUpAdmin" layoutX="587.0" layoutY="469.0" onAction="#btnSingUpAdminAction" prefHeight="40.0" prefWidth="166.0" style="-fx-background-color: #000066;" text="Sing Up" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txtName" layoutX="530.0" layoutY="188.0" prefHeight="26.0" prefWidth="279.0" promptText="Name">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </JFXTextField>
+      <JFXTextField fx:id="txtNIC" layoutX="530.0" layoutY="229.0" prefHeight="26.0" prefWidth="279.0" promptText="NIC">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </JFXTextField>
+      <JFXTextField fx:id="txtEmail" layoutX="530.0" layoutY="349.0" prefHeight="26.0" prefWidth="279.0" promptText="Email">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </JFXTextField>
+      <JFXTextField fx:id="txtPassword" layoutX="530.0" layoutY="389.0" prefHeight="26.0" prefWidth="279.0" promptText="Password ">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </JFXTextField>
+      <JFXTextField fx:id="txtAddress" layoutX="529.0" layoutY="268.0" prefHeight="26.0" prefWidth="279.0" promptText="Address">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </JFXTextField>
+      <JFXButton fx:id="Btnback" layoutX="431.0" layoutY="14.0" onAction="#btnbackAction" prefHeight="47.0" prefWidth="55.0" text="Button">
+         <font>
+            <Font size="1.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="44.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
 </AnchorPane>

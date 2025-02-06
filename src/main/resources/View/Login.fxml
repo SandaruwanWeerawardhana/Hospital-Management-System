@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="623.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Login.LoginFormController">
+<AnchorPane fx:id="loadAnchorePane" prefHeight="623.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Login.LoginFormController">
    <children>
       <ImageView fitHeight="609.0" fitWidth="455.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -52,11 +52,11 @@
             <Font name="System Bold" size="12.0" />
          </font></JFXButton>
       <Text layoutX="575.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don’t you have account" wrappingWidth="128.53662109375" />
-      <JFXButton fx:id="btnRegister" layoutX="680.0" layoutY="446.0" onAction="#btnRegisterAction" prefHeight="26.0" prefWidth="104.0" styleClass="-fx- text-decoration: underline;" text="Register" textFill="#0900ff">
+      <JFXButton fx:id="btnRegister" layoutX="693.0" layoutY="446.0" onAction="#btnRegisterAction" prefHeight="26.0" prefWidth="71.0" text="Register" textFill="#0900ff">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </JFXButton>
-      <JFXComboBox fx:id="loginChoiseBox" layoutX="556.0" layoutY="245.0" onAction="#loginChoiseBoxAction" prefHeight="26.0" prefWidth="238.0" promptText="Select Your Role" />
+      <JFXComboBox fx:id="loginChoiseBox" layoutX="556.0" layoutY="245.0" prefHeight="26.0" prefWidth="238.0" promptText="Select Your Role" />
    </children>
 </AnchorPane>

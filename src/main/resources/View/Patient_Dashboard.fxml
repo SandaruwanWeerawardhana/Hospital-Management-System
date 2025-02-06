@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="AnchorpaneMainPatient" prefHeight="623.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Patient.PatientDashboard">
+   <children>
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#011223" height="616.0" layoutX="6.0" layoutY="4.0" stroke="BLACK" strokeType="INSIDE" width="191.0" />
+      <Rectangle arcHeight="100.0" arcWidth="100.0" fill="WHITE" height="121.0" layoutX="39.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="129.0" />
+      <ImageView fitHeight="104.0" fitWidth="113.0" layoutX="50.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/user.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="378.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Patient Dashboard" textAlignment="CENTER" wrappingWidth="418.1368408203125">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3333333179806218" startY="0.2878788023283988">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.24210526049137115" green="0.005380116868764162" blue="0.005380116868764162" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+     
+      <ImageView fitHeight="40.0" fitWidth="34.0" layoutX="204.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/back.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnAappointment" layoutX="32.0" layoutY="250.0" onAction="#btnAappointmentAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ffff;" text="Appointment">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="32.0" layoutY="318.0" onAction="#btnProfileAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ff9999;" text="Profile">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="32.0" layoutY="388.0" onAction="#btnPaymentAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ffff;" text="Payment">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <Label alignment="CENTER" layoutX="57.0" layoutY="154.0" prefHeight="19.0" prefWidth="89.0" text="ID" textFill="#bfbcbc">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="22.0" layoutY="181.0" prefHeight="19.0" prefWidth="160.0" text="Name" textFill="#eceaea">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="DashboardLoadAnchorpanePatient" layoutX="202.0" layoutY="37.0" prefHeight="583.0" prefWidth="724.0" />
+      <JFXButton layoutX="33.0" layoutY="448.0" onAction="#btnViewAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ffff;" text="View">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="847.0" layoutY="7.0" onAction="#btnBackAction" prefHeight="0.0" prefWidth="74.0" style="-fx-background-color: red;" text="Log Out">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
