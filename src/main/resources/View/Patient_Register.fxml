@@ -50,7 +50,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXComboBox fx:id="ChoiseBoxGender" layoutX="551.0" layoutY="279.0" onAction="#loginChoiseBoxAction" prefHeight="26.0" prefWidth="279.0" promptText="Gender" />
+      <JFXComboBox fx:id="ChoiseBoxGender" layoutX="551.0" layoutY="279.0" prefHeight="26.0" prefWidth="279.0" promptText="Gender" />
       <JFXTextField fx:id="txtName" layoutX="551.0" layoutY="187.0" prefHeight="26.0" prefWidth="279.0" promptText="Name" />
       <JFXTextField fx:id="txtAge" layoutX="551.0" layoutY="236.0" prefHeight="26.0" prefWidth="279.0" promptText="Age" />
       <JFXTextField fx:id="txtEmergencyContact" layoutX="551.0" layoutY="387.0" prefHeight="26.0" prefWidth="279.0" promptText="Emergency Contact" />
