@@ -63,12 +63,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <Label alignment="CENTER" layoutX="57.0" layoutY="154.0" prefHeight="19.0" prefWidth="89.0" text="ID" textFill="#bfbcbc">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="22.0" layoutY="181.0" prefHeight="19.0" prefWidth="160.0" text="Name" textFill="#eceaea">
+      <Label fx:id="lblPatientName" alignment="CENTER" layoutX="22.0" layoutY="171.0" prefHeight="19.0" prefWidth="160.0" text="Name" textFill="#eceaea">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

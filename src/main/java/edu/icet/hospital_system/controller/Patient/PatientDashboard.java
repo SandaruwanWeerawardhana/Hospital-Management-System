@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -13,6 +14,7 @@ public class PatientDashboard {
 
     public AnchorPane DashboardLoadAnchorpanePatient;
     public AnchorPane AnchorpaneMainPatient;
+    public Label lblPatientName;
 
     @FXML
     private JFXButton Btnback;

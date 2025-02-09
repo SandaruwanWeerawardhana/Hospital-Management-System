@@ -45,15 +45,16 @@
          </fill>
       </Text>
       <JFXTextField fx:id="txtQulification" layoutX="551.0" layoutY="330.0" prefHeight="26.0" prefWidth="279.0" promptText="Qualifications" />
-      <JFXButton id="btnLogin" fx:id="btnSingUp" layoutX="627.0" layoutY="467.0" onAction="#btnSingUpAction" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #000066;" text="Sing Up" textFill="WHITE">
+      <JFXButton id="btnLogin" fx:id="btnSingUp" layoutX="627.0" layoutY="490.0" onAction="#btnSingUpAction" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #000066;" text="Sing Up" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
       <JFXTextField fx:id="txtName" layoutX="551.0" layoutY="190.0" prefHeight="26.0" prefWidth="279.0" promptText="Name" />
       <JFXTextField fx:id="txtSpecialty" layoutX="551.0" layoutY="237.0" prefHeight="26.0" prefWidth="279.0" promptText="Specialty" />
-      <JFXTextField fx:id="txtEmail" layoutX="551.0" layoutY="374.0" prefHeight="26.0" prefWidth="279.0" promptText="Email" />
-      <JFXTextField fx:id="txtPassword" layoutX="551.0" layoutY="418.0" prefHeight="26.0" prefWidth="279.0" promptText="Password " />
+      <JFXTextField fx:id="txtEmail" layoutX="551.0" layoutY="407.0" prefHeight="26.0" prefWidth="279.0" promptText="Email" />
+      <JFXTextField fx:id="txtPassword" layoutX="551.0" layoutY="445.0" prefHeight="26.0" prefWidth="279.0" promptText="Password " />
       <JFXTextField fx:id="txtAvalibility" layoutX="550.0" layoutY="285.0" prefHeight="26.0" prefWidth="279.0" promptText="Availability" />
+      <JFXTextField fx:id="txtContact" layoutX="550.0" layoutY="368.0" prefHeight="26.0" prefWidth="279.0" promptText="Contact Detail" />
    </children>
 </AnchorPane>
