@@ -7,19 +7,25 @@ import com.jfoenix.controls.JFXTextField;
 import edu.icet.hospital_system.dto.Patient;
 import edu.icet.hospital_system.service.ServiceFactory;
 import edu.icet.hospital_system.service.custom.PatientService;
+import edu.icet.hospital_system.util.Password;
 import edu.icet.hospital_system.util.ServiceType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
+import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class PatientFormController implements Initializable {
 
+    public AnchorPane PatientAnchorePane;
     @FXML
     private JFXComboBox<String> ChoiseBoxGender;
 
@@ -51,25 +57,36 @@ public class PatientFormController implements Initializable {
 
     @FXML
     void btnSingUpAction(ActionEvent event) {
-        Integer id = 0;
-        if (!(txtName.getText().isEmpty() && txtEmergencyContact.getText().isEmpty() && !txtEmail.getText().isEmpty() &&
+
+        if ((txtName.getText().isEmpty() && txtEmergencyContact.getText().isEmpty() && txtEmail.getText().isEmpty() &&
                 txtName.getText().isEmpty() && ChoiseBoxGender.getValue().isEmpty() && txtAge.getText().isEmpty())) {
+
+            new Alert(Alert.AlertType.ERROR, "Fill All Detail").show();
+        } else {
             if (isInteger(txtAge.getText())) {
                 Patient patient = new Patient(
-                        id,
+                        0,
                         txtName.getText(),
                         Integer.parseInt(txtAge.getText()),
                         ChoiseBoxGender.getValue(),
                         txtMedicalHistory.getText(),
                         txtEmergencyContact.getText(),
                         txtEmail.getText(),
-                        txtPassword.getText()
+                        Password.getInstance().encryptPassword(txtPassword.getText())
                 );
                 service.addPatient(patient);
+                new Alert(Alert.AlertType.ERROR, "Added Success !").show();
+
+                txtName.clear();
+                txtAge.clear();
+                ChoiseBoxGender.setValue(null);
+                txtMedicalHistory.clear();
+                txtEmergencyContact.clear();
+                txtEmail.clear();
+                txtPassword.clear();
             } else {
                 new Alert(Alert.AlertType.ERROR, "Input Correct Age").show();
             }
-            new Alert(Alert.AlertType.ERROR, "Fill All Detail").show();
         }
     }
 
@@ -88,6 +105,16 @@ public class PatientFormController implements Initializable {
             return true;
         } catch (NumberFormatException e) {
             return false;
+        }
+    }
+
+    public void BackAction(ActionEvent actionEvent) {
+        try {
+            PatientAnchorePane.getChildren().clear();
+            Object load = FXMLLoader.load(getClass().getResource("/View/Login.fxml"));
+            PatientAnchorePane.getChildren().add((Node) load);
+        } catch (IOException e) {
+            new Alert(Alert.AlertType.ERROR, "Failed to load view: " + e.getMessage()).show();
         }
     }
 }

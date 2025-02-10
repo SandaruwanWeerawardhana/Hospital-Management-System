@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="623.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Register.DoctorFormController">
+<AnchorPane fx:id="DoctorAnchorePane" prefHeight="623.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Register.DoctorFormController">
    <children>
       <ImageView fitHeight="609.0" fitWidth="455.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -23,9 +23,9 @@
             <Image url="@../Image/Logo_enhanced.png" />
          </image>
       </ImageView>
-      <Text layoutX="466.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Create Doctor Account" textAlignment="CENTER" wrappingWidth="390.1368408203125">
+      <Text layoutX="475.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Create Doctor Account" textAlignment="CENTER" wrappingWidth="390.1368408203125">
          <font>
-            <Font name="System Bold" size="35.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
          <fill>
             <LinearGradient endX="1.0" endY="1.0" startX="0.3333333179806218" startY="0.2878788023283988">
@@ -44,17 +44,26 @@
             </LinearGradient>
          </fill>
       </Text>
-      <JFXTextField fx:id="txtQulification" layoutX="551.0" layoutY="330.0" prefHeight="26.0" prefWidth="279.0" promptText="Qualifications" />
-      <JFXButton id="btnLogin" fx:id="btnSingUp" layoutX="627.0" layoutY="490.0" onAction="#btnSingUpAction" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #000066;" text="Sing Up" textFill="WHITE">
+      <JFXTextField fx:id="txtQulification" layoutX="531.0" layoutY="326.0" prefHeight="26.0" prefWidth="279.0" promptText="Qualifications" />
+      <JFXButton id="btnLogin" fx:id="btnSingUp" layoutX="606.0" layoutY="490.0" onAction="#btnSingUpAction" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #000066;" text="Sing Up" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </JFXButton>
-      <JFXTextField fx:id="txtName" layoutX="551.0" layoutY="190.0" prefHeight="26.0" prefWidth="279.0" promptText="Name" />
-      <JFXTextField fx:id="txtSpecialty" layoutX="551.0" layoutY="237.0" prefHeight="26.0" prefWidth="279.0" promptText="Specialty" />
-      <JFXTextField fx:id="txtEmail" layoutX="551.0" layoutY="407.0" prefHeight="26.0" prefWidth="279.0" promptText="Email" />
-      <JFXTextField fx:id="txtPassword" layoutX="551.0" layoutY="445.0" prefHeight="26.0" prefWidth="279.0" promptText="Password " />
-      <JFXTextField fx:id="txtAvalibility" layoutX="550.0" layoutY="285.0" prefHeight="26.0" prefWidth="279.0" promptText="Availability" />
-      <JFXTextField fx:id="txtContact" layoutX="550.0" layoutY="368.0" prefHeight="26.0" prefWidth="279.0" promptText="Contact Detail" />
+      <JFXTextField fx:id="txtName" layoutX="531.0" layoutY="186.0" prefHeight="26.0" prefWidth="279.0" promptText="Name" />
+      <JFXTextField fx:id="txtSpecialty" layoutX="531.0" layoutY="233.0" prefHeight="26.0" prefWidth="279.0" promptText="Specialty" />
+      <JFXTextField fx:id="txtEmail" layoutX="531.0" layoutY="403.0" prefHeight="26.0" prefWidth="279.0" promptText="Email" />
+      <JFXTextField fx:id="txtPassword" layoutX="531.0" layoutY="441.0" prefHeight="26.0" prefWidth="279.0" promptText="Password " />
+      <JFXTextField fx:id="txtAvalibility" layoutX="530.0" layoutY="281.0" prefHeight="26.0" prefWidth="279.0" promptText="Availability" />
+      <JFXTextField fx:id="txtContact" layoutX="530.0" layoutY="364.0" prefHeight="26.0" prefWidth="279.0" promptText="Contact Detail" />
+      <JFXButton layoutX="414.0" layoutY="3.0" onAction="#BackAction" prefHeight="48.0" prefWidth="62.0">
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>

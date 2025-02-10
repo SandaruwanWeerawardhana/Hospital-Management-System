@@ -22,6 +22,7 @@ import java.util.ResourceBundle;
 
 public class LoginFormController implements Initializable {
 
+    public AnchorPane loadAnchorePaneLogin;
     @FXML
     private JFXButton btnLogin;
 
@@ -38,9 +39,6 @@ public class LoginFormController implements Initializable {
     private JFXTextField txtPassword;
 
     @FXML
-    private AnchorPane loadAnchorePane;
-
-    @FXML
     void btnLoginAction(ActionEvent event) throws IOException {
         String selectedRole = loginChoiseBox.getValue();
         if (txtEmail.getText().isEmpty() && txtPassword.getText().isEmpty() && loginChoiseBox.getValue().isEmpty()) {
@@ -48,20 +46,20 @@ public class LoginFormController implements Initializable {
         }else {
             switch (selectedRole) {
                 case "Doctor":
-                    loadAnchorePane.getChildren().clear();
+                    loadAnchorePaneLogin.getChildren().clear();
                     Object load = FXMLLoader.load(getClass().getResource("/View/Doctor_Dashboard.fxml"));
-                    loadAnchorePane.getChildren().add((Node) load);
+                    loadAnchorePaneLogin.getChildren().add((Node) load);
                     break;
 
                 case "Patient":
-                    loadAnchorePane.getChildren().clear();
+                    loadAnchorePaneLogin.getChildren().clear();
                     Object load1 = FXMLLoader.load(getClass().getResource("/View/Patient_Dashboard.fxml"));
-                    loadAnchorePane.getChildren().add((Node) load1);
+                    loadAnchorePaneLogin.getChildren().add((Node) load1);
                     break;
                 case "Admin":
-                    loadAnchorePane.getChildren().clear();
+                    loadAnchorePaneLogin.getChildren().clear();
                     Object load2 = FXMLLoader.load(getClass().getResource("/View/Admin_Dashboard.fxml"));
-                    loadAnchorePane.getChildren().add((Node) load2);
+                    loadAnchorePaneLogin.getChildren().add((Node) load2);
                     break;
             }
         }
@@ -69,9 +67,9 @@ public class LoginFormController implements Initializable {
 
     @FXML
     void btnRegisterAction(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/Register_selection.fxml"))));
-        stage.show();
+        loadAnchorePaneLogin.getChildren().clear();
+        Object load2 = FXMLLoader.load(getClass().getResource("/View/Register_selection.fxml"));
+        loadAnchorePaneLogin.getChildren().add((Node) load2);
     }
 
     @Override

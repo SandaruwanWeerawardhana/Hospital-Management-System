@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="623.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Register.RegisterSelectionFormController">
+<AnchorPane fx:id="RegisterSelectionAnchorePane" prefHeight="623.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Register.RegisterSelectionFormController">
    <children>
       <ImageView fitHeight="609.0" fitWidth="447.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -24,7 +24,7 @@
       </ImageView>
       <Text layoutX="509.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Select Your Role" textAlignment="CENTER" wrappingWidth="322.1368408203125">
          <font>
-            <Font name="System Bold" size="40.0" />
+            <Font name="System Bold" size="25.0" />
          </font>
          <fill>
             <LinearGradient endX="1.0" endY="1.0" startX="0.4100378787878788" startY="0.2500000144496109">
@@ -43,20 +43,29 @@
             </LinearGradient>
          </fill>
       </Text>
-      <JFXButton id="btnLogin" fx:id="btnDoctor" layoutX="534.0" layoutY="217.0" onAction="#btnDoctorAction" prefHeight="46.0" prefWidth="271.0" style="-fx-background-color: #006600; -fx-border-radius: rounded; -fx-border-width: 5px;" text="Doctor" textFill="WHITE">
+      <JFXButton id="btnLogin" fx:id="btnDoctor" layoutX="576.0" layoutY="228.0" onAction="#btnDoctorAction" prefHeight="40.0" prefWidth="198.0" style="-fx-background-color: #006600; -fx-border-radius: rounded; -fx-border-width: 5px;" text="Doctor" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="21.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton id="btnLogin" fx:id="btnReceptionist" layoutX="534.0" layoutY="320.0" onAction="#btnReceptionistAction" prefHeight="46.0" prefWidth="271.0" style="-fx-background-color: #006600; -fx-border-radius: rounded; -fx-border-width: 5px;" text="Receptionist" textFill="WHITE">
+      <JFXButton id="btnLogin" fx:id="btnReceptionist" layoutX="576.0" layoutY="326.0" onAction="#btnReceptionistAction" prefHeight="40.0" prefWidth="198.0" style="-fx-background-color: #006600; -fx-border-radius: rounded; -fx-border-width: 5px;" text="Patient" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="21.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton id="btnLogin" fx:id="btnAdmin" layoutX="534.0" layoutY="421.0" onAction="#btnAdminAction" prefHeight="46.0" prefWidth="271.0" style="-fx-background-color: #006600; -fx-border-radius: rounded; -fx-border-width: 5px;" text="Admin" textFill="WHITE">
+      <JFXButton id="btnLogin" fx:id="btnAdmin" layoutX="576.0" layoutY="427.0" onAction="#btnAdminAction" prefHeight="40.0" prefWidth="198.0" style="-fx-background-color: #006600; -fx-border-radius: rounded; -fx-border-width: 5px;" text="Admin" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="21.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
+      </JFXButton>
+      <JFXButton layoutX="413.0" layoutY="5.0" onAction="#BackAction" prefHeight="48.0" prefWidth="62.0">
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </JFXButton>
    </children>
 </AnchorPane>

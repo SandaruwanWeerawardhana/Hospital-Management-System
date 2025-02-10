@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="623.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Register.PatientFormController">
+<AnchorPane fx:id="PatientAnchorePane" prefHeight="623.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Register.PatientFormController">
    <children>
       <ImageView fitHeight="609.0" fitWidth="455.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -24,9 +24,9 @@
             <Image url="@../Image/Logo_enhanced.png" />
          </image>
       </ImageView>
-      <Text layoutX="466.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Create Patient Account" textAlignment="CENTER" wrappingWidth="390.1368408203125">
+      <Text layoutX="474.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Create Patient Account" textAlignment="CENTER" wrappingWidth="390.1368408203125">
          <font>
-            <Font name="System Bold" size="35.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
          <fill>
             <LinearGradient endX="1.0" endY="1.0" startX="0.3333333179806218" startY="0.2878788023283988">
@@ -57,5 +57,14 @@
       <JFXTextField fx:id="txtEmail" layoutX="551.0" layoutY="434.0" prefHeight="26.0" prefWidth="279.0" promptText="Email" />
       <JFXTextField fx:id="txtPassword" layoutX="551.0" layoutY="484.0" prefHeight="26.0" prefWidth="279.0" promptText="Password " />
       <JFXTextField fx:id="txtMedicalHistory" layoutX="551.0" layoutY="332.0" prefHeight="26.0" prefWidth="279.0" promptText="Medical History" />
+      <JFXButton layoutX="414.0" layoutY="-1.0" onAction="#BackAction" prefHeight="48.0" prefWidth="62.0">
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>
