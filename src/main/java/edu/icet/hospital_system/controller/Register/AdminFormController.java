@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXTextField;
 import edu.icet.hospital_system.dto.Admin;
 import edu.icet.hospital_system.service.ServiceFactory;
 import edu.icet.hospital_system.service.custom.AdminService;
+import edu.icet.hospital_system.util.Password;
 import edu.icet.hospital_system.util.ServiceType;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -58,7 +59,7 @@ public class AdminFormController {
                     txtAddress.getText(),
                     txtContactNumber.getText(),
                     txtEmail.getText(),
-                    txtPassword.getText()
+                    Password.getInstance().encryptPassword(txtPassword.getText())
             );
             service.addAdmin(admin);
 

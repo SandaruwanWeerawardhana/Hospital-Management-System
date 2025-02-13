@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXTextField;
 import edu.icet.hospital_system.dto.Doctor;
 import edu.icet.hospital_system.service.ServiceFactory;
 import edu.icet.hospital_system.service.custom.DoctorService;
+import edu.icet.hospital_system.util.Password;
 import edu.icet.hospital_system.util.ServiceType;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -57,11 +58,11 @@ public class DoctorFormController {
                     txtQulification.getText(),
                     txtContact.getText(),
                     txtEmail.getText(),
-                    txtPassword.getText()
+                    Password.getInstance().encryptPassword(txtPassword.getText())
             );
             service.addDoctor(doctor);
 
-            new Alert(Alert.AlertType.ERROR, "Added Success !").show();
+            new Alert(Alert.AlertType.CONFIRMATION, "Added Success !").show();
 
             txtName.clear();
             txtSpecialty.clear();
