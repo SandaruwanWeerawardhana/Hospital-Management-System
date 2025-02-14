@@ -75,7 +75,7 @@ public class PatientFormController implements Initializable {
                         Password.getInstance().encryptPassword(txtPassword.getText())
                 );
                 service.addPatient(patient);
-                new Alert(Alert.AlertType.ERROR, "Added Success !").show();
+                new Alert(Alert.AlertType.CONFIRMATION, "Added Success !").show();
 
                 txtName.clear();
                 txtAge.clear();
@@ -114,7 +114,7 @@ public class PatientFormController implements Initializable {
             Object load = FXMLLoader.load(getClass().getResource("/View/Login.fxml"));
             PatientAnchorePane.getChildren().add((Node) load);
         } catch (IOException e) {
-            new Alert(Alert.AlertType.ERROR, "Failed to load view: " + e.getMessage()).show();
+            new Alert(Alert.AlertType.CONFIRMATION, "Failed to load view: " + e.getMessage()).show();
         }
     }
 }

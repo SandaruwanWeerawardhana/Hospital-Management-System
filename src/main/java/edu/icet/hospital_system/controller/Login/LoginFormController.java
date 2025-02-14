@@ -80,7 +80,7 @@ public class LoginFormController implements Initializable {
                         new Alert(Alert.AlertType.ERROR, "Invalide UserName Or Password").show();
                     } else {
                         String password = Password.getInstance().decryptPassword(patient.getPassword());
-                        PatientUtil.setCurrentDoctor(patient);
+                        PatientUtil.set(patient);
                         if (password.equals(txtPassword.getText())) {
 
                             loadAnchorePaneLogin.getChildren().clear();

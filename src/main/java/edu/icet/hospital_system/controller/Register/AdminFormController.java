@@ -63,7 +63,7 @@ public class AdminFormController {
             );
             service.addAdmin(admin);
 
-            new Alert(Alert.AlertType.ERROR, "Added Success !").show();
+            new Alert(Alert.AlertType.CONFIRMATION, "Added Success !").show();
 
             txtName.clear();
             txtNIC.clear();
