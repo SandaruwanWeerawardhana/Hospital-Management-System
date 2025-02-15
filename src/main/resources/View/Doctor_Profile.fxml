@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXBadge?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="DashboardLoadAnchorpane" onDragDetected="#DashboardLoadAnchorpaneAction" prefHeight="594.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Doctor.DoctorProfileForm">
+   <children>
+      <Label layoutX="7.0" layoutY="4.0" prefHeight="30.0" prefWidth="73.0" text="Doctor ID :-" textFill="#2fa928">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <JFXBadge />
+      <JFXButton fx:id="btnEdit" layoutX="498.0" layoutY="291.0" onAction="#btnEditAction" prefHeight="40.0" prefWidth="119.0" style="-fx-background-color: #08a332;" text="Change">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" layoutX="499.0" layoutY="385.0" onAction="#btnDeleteAction" prefHeight="40.0" prefWidth="119.0" style="-fx-background-color: #e04372;" text="Delete">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <Rectangle arcHeight="200.0" arcWidth="200.0" height="153.0" layoutX="474.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" width="168.0" />
+      <ImageView fitHeight="133.0" fitWidth="135.0" layoutX="492.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/user.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtQulification" layoutX="50.0" layoutY="306.0" prefHeight="26.0" prefWidth="279.0" promptText="Qualifications" />
+      <JFXTextField fx:id="txtName" layoutX="50.0" layoutY="129.0" prefHeight="26.0" prefWidth="279.0" promptText="Name" />
+      <JFXTextField fx:id="txtSpecialty" layoutX="50.0" layoutY="187.0" prefHeight="26.0" prefWidth="279.0" promptText="Specialty" />
+      <JFXTextField fx:id="txtEmail" layoutX="50.0" layoutY="404.0" prefHeight="26.0" prefWidth="279.0" promptText="Email" />
+      <JFXTextField fx:id="txtPassword" layoutX="50.0" layoutY="461.0" prefHeight="26.0" prefWidth="279.0" promptText="Password " />
+      <JFXTextField fx:id="txtAvalibility" layoutX="49.0" layoutY="253.0" prefHeight="26.0" prefWidth="279.0" promptText="Availability" />
+      <Label fx:id="lblId" layoutX="81.0" layoutY="4.0" prefHeight="30.0" prefWidth="73.0" text="-" textFill="#2fa928">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtContact" layoutX="49.0" layoutY="358.0" prefHeight="26.0" prefWidth="279.0" promptText="Contact" />
+   </children>
+</AnchorPane>

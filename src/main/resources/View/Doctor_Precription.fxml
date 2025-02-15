@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXBadge?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="DashboardLoadAnchorpane" onDragDetected="#DashboardLoadAnchorpaneAction" prefHeight="594.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Doctor.DoctorPrecriptionForm">
+   <children>
+      <Label layoutX="7.0" layoutY="4.0" prefHeight="30.0" prefWidth="77.0" text="Doctor ID :-" textFill="#2fa928">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <JFXBadge />
+      <JFXButton layoutX="477.0" layoutY="235.0" onAction="#btnPrescriptionAction" prefHeight="37.0" prefWidth="134.0" style="-fx-background-color: #6967db;" text="Create">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txtDuration" layoutX="51.0" layoutY="248.0" prefHeight="26.0" prefWidth="279.0" promptText="Duration" />
+      <JFXTextField fx:id="txtPatientId" layoutX="51.0" layoutY="71.0" prefHeight="26.0" prefWidth="279.0" promptText="Patient Id" />
+      <JFXTextField fx:id="txtMedicine" layoutX="51.0" layoutY="129.0" prefHeight="26.0" prefWidth="279.0" promptText="Medicine" />
+      <JFXTextField fx:id="txtDosage" layoutX="50.0" layoutY="193.0" prefHeight="26.0" prefWidth="279.0" promptText="Dosage" />
+      <TableView fx:id="tlbPatientDetail" layoutX="10.0" layoutY="317.0" prefHeight="268.0" prefWidth="714.0">
+        <columns>
+          <TableColumn fx:id="colID" prefWidth="55.19997787475586" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="185.6000213623047" text="Name" />
+            <TableColumn fx:id="ColAge" prefWidth="58.4000244140625" text="Age" />
+            <TableColumn fx:id="colGender" prefWidth="59.20001220703125" text="Gender" />
+            <TableColumn fx:id="colContactDetails" prefWidth="169.5999755859375" text="Contact Details" />
+            <TableColumn fx:id="colMedicalHistory" prefWidth="140.7999267578125" text="Medical History" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <ImageView fitHeight="135.0" fitWidth="134.0" layoutX="465.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/prescription.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="245.0" layoutY="291.0" prefHeight="30.0" prefWidth="243.0" text="Patient Details" textFill="#015906">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDoctorID" layoutX="81.0" layoutY="5.0" prefHeight="30.0" prefWidth="98.0" text="-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

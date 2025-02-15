@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXBadge?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Patient.PatientProfile">
+   <children>
+      <AnchorPane fx:id="DashboardLoadAnchorpane" onDragDetected="#DashboardLoadAnchorpaneAction" prefHeight="594.0" prefWidth="734.0">
+         <children>
+            <Label layoutX="7.0" layoutY="4.0" prefHeight="30.0" prefWidth="144.0" text="Profile" textFill="#2fa928">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDate" alignment="CENTER" layoutX="601.0" layoutY="6.0" prefHeight="30.0" prefWidth="126.0" text="Date">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <JFXBadge />
+            <JFXButton fx:id="btnEdit" layoutX="468.0" layoutY="289.0" onAction="#btnEditAction" prefHeight="30.0" prefWidth="179.0" style="-fx-background-color: #08a332;" text="Change">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXComboBox fx:id="ChoiseBoxGender" layoutX="38.0" layoutY="186.0" onAction="#loginChoiseBoxAction" prefHeight="26.0" prefWidth="279.0" promptText="Gender" />
+            <JFXTextField fx:id="txtName" layoutX="38.0" layoutY="79.0" prefHeight="26.0" prefWidth="279.0" promptText="Name" />
+            <JFXTextField fx:id="txtAge" layoutX="38.0" layoutY="135.0" prefHeight="26.0" prefWidth="279.0" promptText="Age" />
+            <JFXTextField fx:id="txtEmergencyContact" layoutX="38.0" layoutY="236.0" prefHeight="26.0" prefWidth="279.0" promptText="Emergency Contact" />
+            <JFXTextField fx:id="txtEmail" layoutX="38.0" layoutY="336.0" prefHeight="26.0" prefWidth="279.0" promptText="Email" />
+            <JFXTextField fx:id="txtPassword" layoutX="38.0" layoutY="388.0" prefHeight="26.0" prefWidth="279.0" promptText="Password " />
+            <JFXTextField fx:id="txtMedicalHistory" layoutX="38.0" layoutY="286.0" prefHeight="26.0" prefWidth="279.0" promptText="Medical History" />
+            <JFXButton fx:id="btnDelete" layoutX="468.0" layoutY="391.0" onAction="#btnDeleteAction" prefHeight="30.0" prefWidth="179.0" style="-fx-background-color: #e04372;" text="Delete">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <Rectangle arcHeight="200.0" arcWidth="200.0" height="153.0" layoutX="474.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" width="168.0" />
+            <ImageView fitHeight="133.0" fitWidth="135.0" layoutX="492.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/user.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="AnchorpaneMainAdmin" prefHeight="623.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Admin.AdminDashboardForm">
+   <children>
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#280101" height="616.0" layoutX="6.0" layoutY="4.0" stroke="BLACK" strokeType="INSIDE" width="191.0" />
+      <Rectangle arcHeight="100.0" arcWidth="100.0" fill="WHITE" height="121.0" layoutX="39.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="129.0" />
+      <ImageView fitHeight="104.0" fitWidth="113.0" layoutX="50.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/user.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="378.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Admin Dashboard" textAlignment="CENTER" wrappingWidth="418.1368408203125">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3333333179806218" startY="0.2878788023283988">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.24210526049137115" green="0.005380116868764162" blue="0.005380116868764162" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <JFXButton layoutX="32.0" layoutY="304.0" onAction="#btnPatientAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ffff;" text="Patient">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="32.0" layoutY="543.0" onAction="#btnProfileAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ff9999;" text="Profile">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="30.0" layoutY="243.0" onAction="#btnDoctorAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ffff;" text="Doctor">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#062f56" height="91.0" layoutX="446.0" layoutY="43.0" stroke="BLACK" strokeType="INSIDE" width="207.0" />
+      <Label fx:id="lblId" alignment="CENTER" layoutX="57.0" layoutY="154.0" prefHeight="19.0" prefWidth="89.0" text="ID" textFill="#bfbcbc">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblName" alignment="CENTER" layoutX="22.0" layoutY="181.0" prefHeight="19.0" prefWidth="160.0" text="Name" textFill="#eceaea">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#062f56" height="91.0" layoutX="690.0" layoutY="43.0" stroke="BLACK" strokeType="INSIDE" width="207.0" />
+      <AnchorPane fx:id="DashboardLoadAnchorpaneAdmin" layoutX="202.0" layoutY="138.0" prefHeight="482.0" prefWidth="724.0" />
+      <JFXButton layoutX="30.0" layoutY="367.0" onAction="#btnPaymentAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ffff;" text="Payment">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="32.0" layoutY="428.0" onAction="#btnAappointmentAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ffff;" text="Appointment">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#062f56" height="91.0" layoutX="212.0" layoutY="43.0" stroke="BLACK" strokeType="INSIDE" width="207.0" />
+      <ImageView fitHeight="85.0" fitWidth="73.0" layoutX="224.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/doctor-.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="91.0" fitWidth="73.0" layoutX="449.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/users.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="91.0" fitWidth="73.0" layoutX="687.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/users.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="305.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Total Doctor" textAlignment="CENTER" wrappingWidth="104.0">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3333333179806218" startY="0.2878788023283988">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text fx:id="lblTotDctor" layoutX="305.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="-" textAlignment="CENTER" wrappingWidth="104.0">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3333333179806218" startY="0.2878788023283988">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text layoutX="526.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Total Patient" textAlignment="CENTER" wrappingWidth="112.0">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3333333179806218" startY="0.2878788023283988">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text fx:id="lblTotPatient" layoutX="530.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="-" textAlignment="CENTER" wrappingWidth="104.0">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3333333179806218" startY="0.2878788023283988">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text layoutX="727.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Total Revanue" textAlignment="CENTER" wrappingWidth="172.2000732421875">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3333333179806218" startY="0.2878788023283988">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text fx:id="lblTotIncome" layoutX="761.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="-" textAlignment="CENTER" wrappingWidth="104.0">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3333333179806218" startY="0.2878788023283988">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <JFXButton layoutX="32.0" layoutY="486.0" onAction="#btnViewAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ffff;" text="View">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="849.0" layoutY="4.0" onAction="#btnBackAction" prefHeight="0.0" prefWidth="74.0" style="-fx-background-color: red;" text="Log Out">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

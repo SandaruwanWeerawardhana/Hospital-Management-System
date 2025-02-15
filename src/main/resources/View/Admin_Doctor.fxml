@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="DashboardLoadAnchorpane" prefHeight="482.0" prefWidth="724.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Admin.AdminDoctor">
+   <children>
+      <TableView fx:id="tlbDoctor" layoutX="8.0" layoutY="9.0" prefHeight="434.0" prefWidth="707.0">
+         <columns>
+            <TableColumn fx:id="colID" prefWidth="62.39999198913574" text="DoctorID" />
+            <TableColumn fx:id="colDoctorName" prefWidth="143.19995880126953" text="Doctor Name" />
+            <TableColumn fx:id="colSpecialty" prefWidth="149.60003662109375" text="Specialty" />
+            <TableColumn fx:id="colAvailability" minWidth="0.0" prefWidth="136.79998779296875" text="Availability" />
+            <TableColumn fx:id="colQualifications" minWidth="0.0" prefWidth="111.99996948242188" text="Qualifications" />
+            <TableColumn fx:id="colContact" minWidth="0.0" prefWidth="92.0" text="Contact" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <JFXButton layoutX="297.0" layoutY="448.0" onAction="#btnReportAction" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: #e04372;" text="Generate Report">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
