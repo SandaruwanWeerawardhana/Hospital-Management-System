@@ -16,6 +16,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class AdminFormController {
 
@@ -52,26 +54,29 @@ public class AdminFormController {
 
             new Alert(Alert.AlertType.ERROR, "Fill All Detail").show();
         } else {
-            Admin admin = new Admin(
-                    0,
-                    txtName.getText(),
-                    txtNIC.getText(),
-                    txtAddress.getText(),
-                    txtContactNumber.getText(),
-                    txtEmail.getText(),
-                    Password.getInstance().encryptPassword(txtPassword.getText())
-            );
-            service.addAdmin(admin);
+            if (validatePhoneNumber(txtContactNumber.getText()) && validateEmail(txtEmail.getText())) {
+                Admin admin = new Admin(
+                        0,
+                        txtName.getText(),
+                        txtNIC.getText(),
+                        txtAddress.getText(),
+                        txtContactNumber.getText(),
+                        txtEmail.getText(),
+                        Password.getInstance().encryptPassword(txtPassword.getText())
+                );
+                service.addAdmin(admin);
 
-            new Alert(Alert.AlertType.CONFIRMATION, "Added Success !").show();
+                new Alert(Alert.AlertType.CONFIRMATION, "Added Success !").show();
 
-            txtName.clear();
-            txtNIC.clear();
-            txtAddress.clear();
-            txtContactNumber.clear();
-            txtEmail.clear();
-            txtPassword.clear();
-
+                txtName.clear();
+                txtNIC.clear();
+                txtAddress.clear();
+                txtContactNumber.clear();
+                txtEmail.clear();
+                txtPassword.clear();
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Add Valid Detail").show();
+            }
         }
     }
 
@@ -85,4 +90,19 @@ public class AdminFormController {
         }
     }
 
+    private boolean validatePhoneNumber(String phoneNumber) {
+
+        Pattern pattern = Pattern.compile("^0\\d{9}$");
+        Matcher matcher = pattern.matcher(phoneNumber);
+        return matcher.matches();
+
+    }
+
+    private boolean validateEmail(String email) {
+
+        Pattern pattern = Pattern.compile("^[^@]+@[^@]+$");
+        Matcher matcher = pattern.matcher(email);
+
+        return matcher.matches();
+    }
 }

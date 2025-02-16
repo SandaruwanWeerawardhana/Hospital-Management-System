@@ -22,6 +22,8 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class PatientFormController implements Initializable {
 
@@ -63,30 +65,35 @@ public class PatientFormController implements Initializable {
 
             new Alert(Alert.AlertType.ERROR, "Fill All Detail").show();
         } else {
-            if (isInteger(txtAge.getText())) {
-                Patient patient = new Patient(
-                        0,
-                        txtName.getText(),
-                        Integer.parseInt(txtAge.getText()),
-                        ChoiseBoxGender.getValue(),
-                        txtMedicalHistory.getText(),
-                        txtEmergencyContact.getText(),
-                        txtEmail.getText(),
-                        Password.getInstance().encryptPassword(txtPassword.getText())
-                );
-                service.addPatient(patient);
-                new Alert(Alert.AlertType.CONFIRMATION, "Added Success !").show();
+            if (validatePhoneNumber(txtEmergencyContact.getText()) && validateEmail(txtEmail.getText())) {
+                if (isInteger(txtAge.getText())) {
+                    Patient patient = new Patient(
+                            0,
+                            txtName.getText(),
+                            Integer.parseInt(txtAge.getText()),
+                            ChoiseBoxGender.getValue(),
+                            txtMedicalHistory.getText(),
+                            txtEmergencyContact.getText(),
+                            txtEmail.getText(),
+                            Password.getInstance().encryptPassword(txtPassword.getText())
+                    );
+                    service.addPatient(patient);
+                    new Alert(Alert.AlertType.CONFIRMATION, "Added Success !").show();
 
-                txtName.clear();
-                txtAge.clear();
-                ChoiseBoxGender.setValue(null);
-                txtMedicalHistory.clear();
-                txtEmergencyContact.clear();
-                txtEmail.clear();
-                txtPassword.clear();
-            } else {
-                new Alert(Alert.AlertType.ERROR, "Input Correct Age").show();
+                    txtName.clear();
+                    txtAge.clear();
+                    ChoiseBoxGender.setValue(null);
+                    txtMedicalHistory.clear();
+                    txtEmergencyContact.clear();
+                    txtEmail.clear();
+                    txtPassword.clear();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Input Correct Age").show();
+                }
+            }else {
+                new Alert(Alert.AlertType.WARNING, "Add Valid Detail").show();
             }
+
         }
     }
 
@@ -116,5 +123,21 @@ public class PatientFormController implements Initializable {
         } catch (IOException e) {
             new Alert(Alert.AlertType.CONFIRMATION, "Failed to load view: " + e.getMessage()).show();
         }
+    }
+
+    private boolean validatePhoneNumber(String phoneNumber) {
+
+        Pattern pattern = Pattern.compile("^0\\d{9}$");
+        Matcher matcher = pattern.matcher(phoneNumber);
+        return matcher.matches();
+
+    }
+
+    private boolean validateEmail(String email) {
+
+        Pattern pattern = Pattern.compile("^[^@]+@[^@]+$");
+        Matcher matcher = pattern.matcher(email);
+
+        return matcher.matches();
     }
 }

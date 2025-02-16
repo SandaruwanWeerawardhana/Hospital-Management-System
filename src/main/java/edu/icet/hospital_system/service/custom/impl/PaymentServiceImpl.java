@@ -47,7 +47,8 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public Long getTotIncome() {
+    public Double getTotIncome() {
+        System.out.println(paymentDao.getTotIncome());
         return paymentDao.getTotIncome();
     }
 }

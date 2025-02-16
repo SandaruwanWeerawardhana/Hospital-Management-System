@@ -16,5 +16,5 @@ public interface PaymentService extends SuperService {
 
     List<Payment> getAllData();
 
-    Long getTotIncome();
+    Double getTotIncome();
 }

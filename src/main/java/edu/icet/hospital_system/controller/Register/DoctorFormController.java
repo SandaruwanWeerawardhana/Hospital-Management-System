@@ -16,6 +16,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class DoctorFormController {
 
@@ -46,32 +48,35 @@ public class DoctorFormController {
     @FXML
     void btnSingUpAction(ActionEvent event) {
         if ((txtName.getText().isEmpty() && txtSpecialty.getText().isEmpty() && txtEmail.getText().isEmpty() &&
-                txtQulification.getText().isEmpty() && txtAvalibility.getText().isEmpty()&& txtContact.getText().isEmpty() && txtPassword.getText().isEmpty())) {
+                txtQulification.getText().isEmpty() && txtAvalibility.getText().isEmpty() && txtContact.getText().isEmpty() && txtPassword.getText().isEmpty())) {
 
             new Alert(Alert.AlertType.ERROR, "Fill All Detail").show();
         } else {
-            Doctor doctor = new Doctor(
-                    0,
-                    txtName.getText(),
-                    txtSpecialty.getText(),
-                    txtAvalibility.getText(),
-                    txtQulification.getText(),
-                    txtContact.getText(),
-                    txtEmail.getText(),
-                    Password.getInstance().encryptPassword(txtPassword.getText())
-            );
-            service.addDoctor(doctor);
+            if (validatePhoneNumber(txtContact.getText()) && validateEmail(txtEmail.getText())) {
+                Doctor doctor = new Doctor(
+                        0,
+                        txtName.getText(),
+                        txtSpecialty.getText(),
+                        txtAvalibility.getText(),
+                        txtQulification.getText(),
+                        txtContact.getText(),
+                        txtEmail.getText(),
+                        Password.getInstance().encryptPassword(txtPassword.getText())
+                );
+                service.addDoctor(doctor);
 
-            new Alert(Alert.AlertType.CONFIRMATION, "Added Success !").show();
+                new Alert(Alert.AlertType.CONFIRMATION, "Added Success !").show();
 
-            txtName.clear();
-            txtSpecialty.clear();
-            txtAvalibility.clear();
-            txtQulification.clear();
-            txtContact.clear();
-            txtEmail.clear();
-            txtPassword.clear();
-
+                txtName.clear();
+                txtSpecialty.clear();
+                txtAvalibility.clear();
+                txtQulification.clear();
+                txtContact.clear();
+                txtEmail.clear();
+                txtPassword.clear();
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Add Valid Detail").show();
+            }
         }
 
     }
@@ -85,4 +90,21 @@ public class DoctorFormController {
             new Alert(Alert.AlertType.ERROR, "Failed to load view: " + e.getMessage()).show();
         }
     }
+
+    private boolean validatePhoneNumber(String phoneNumber) {
+
+        Pattern pattern = Pattern.compile("^0\\d{9}$");
+        Matcher matcher = pattern.matcher(phoneNumber);
+        return matcher.matches();
+
+    }
+
+    private boolean validateEmail(String email) {
+
+        Pattern pattern = Pattern.compile("^[^@]+@[^@]+$");
+        Matcher matcher = pattern.matcher(email);
+
+        return matcher.matches();
+    }
+
 }

@@ -1,6 +1,5 @@
 package edu.icet.hospital_system.repository.custom.impl;
 
-import edu.icet.hospital_system.entity.DoctorEntity;
 import edu.icet.hospital_system.entity.PaymentEntity;
 import edu.icet.hospital_system.repository.custom.PaymentDao;
 import edu.icet.hospital_system.util.HibernateConfig;
@@ -61,12 +60,13 @@ public class PaymentDaoImpl implements PaymentDao {
     }
 
     @Override
-    public Long getTotIncome() {
+    public Double getTotIncome() {
         try (Session session = HibernateConfig.getSession()) {
-            return session.createQuery("SELECT SUM(total_amount) FROM Billing", Long.class)
+            return session.createQuery("SELECT SUM(p.total_amount) FROM billing p", Double.class)
                     .uniqueResult();
         } catch (Exception e) {
-            return 0L;  // Return 0L if an error occurs
+            e.printStackTrace();
+            return 0.0;
         }
     }
 

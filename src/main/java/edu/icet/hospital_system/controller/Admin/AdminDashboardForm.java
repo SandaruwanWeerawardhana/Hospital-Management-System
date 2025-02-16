@@ -119,7 +119,7 @@ public class AdminDashboardForm implements Initializable {
         lblTotPatient.setText(String.valueOf(pCount));
 
         PaymentService paymentService = ServiceFactory.getInstance().getServiceType(ServiceType.PAYMENT);
-        Long paymentCount = paymentService.getTotIncome();
+        Double paymentCount = paymentService.getTotIncome();
         lblTotIncome.setText(String.valueOf(paymentCount));
 
     }
