@@ -1,0 +1,229 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="doctor" language="java" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="cd3df208-1f01-461e-9efe-3ee6c21a9dcb">
+	<property name="template.engine" value="tabular_template"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (8)"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Title" fontName="Arial" fontSize="26.0" bold="true"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18.0"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12.0" bold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12.0"/>
+	<style name="Table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TH" mode="Transparent" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			<leftPen lineWidth="0.0" lineColor="#CCCCCC"/>
+			<bottomPen lineWidth="0.5" lineColor="#CCCCCC"/>
+			<rightPen lineWidth="0.0" lineColor="#CCCCCC"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Transparent" forecolor="#B89F7D" backcolor="#70A9C6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#CCCCCC"/>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Transparent" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#CCCCCC"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH_Label" style="SubTitle" mode="Opaque" forecolor="#FFFFFF" backcolor="#666666" fontSize="16.0" bold="true">
+		<box leftPadding="2" style="SubTitle"/>
+	</style>
+	<dataset name="tableDataset" uuid="bd0f150b-1bb7-4aab-8b2e-5cc345a3de4f">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (8)"/>
+		<query language="SQL"><![CDATA[select * from doctor]]></query>
+		<field name="doctor_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="doctor_id"/>
+			<property name="com.jaspersoft.studio.field.label" value="doctor_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="doctor"/>
+		</field>
+		<field name="name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="name"/>
+			<property name="com.jaspersoft.studio.field.label" value="name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="doctor"/>
+		</field>
+		<field name="specialty" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="specialty"/>
+			<property name="com.jaspersoft.studio.field.label" value="specialty"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="doctor"/>
+		</field>
+		<field name="availability" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="availability"/>
+			<property name="com.jaspersoft.studio.field.label" value="availability"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="doctor"/>
+		</field>
+		<field name="qualifications" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="qualifications"/>
+			<property name="com.jaspersoft.studio.field.label" value="qualifications"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="doctor"/>
+		</field>
+		<field name="contact_details" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="contact_details"/>
+			<property name="com.jaspersoft.studio.field.label" value="contact_details"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="doctor"/>
+		</field>
+		<field name="email" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="email"/>
+			<property name="com.jaspersoft.studio.field.label" value="email"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="doctor"/>
+		</field>
+	</dataset>
+	<query language="sql"><![CDATA[]]></query>
+	<background height="575" splitType="Stretch">
+		<element kind="frame" uuid="c43bcaab-2004-4343-bc81-ffa62c8e2de6" mode="Opaque" x="-20" y="530" width="70" height="40" backcolor="#666666">
+			<element kind="textField" uuid="556559f9-238c-4b08-acd0-f8cd3e750500" x="7" y="1" width="55" height="38" forecolor="#000000" fontSize="22.0" bold="true" hTextAlign="Center" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA[$V{PAGE_NUMBER}]]></expression>
+			</element>
+			<element kind="textField" uuid="a0923ef1-0a31-42cd-80c8-b714e4c8a4af" x="0" y="77" width="3" height="3" forecolor="#000000" fontSize="16.0" evaluationTime="Report" bold="false" hTextAlign="Center" style="Column header">
+				<expression><![CDATA[$V{PAGE_NUMBER}]]></expression>
+				<box leftPadding="4" rightPadding="4" style="Column header"/>
+			</element>
+			<element kind="line" uuid="1022d58b-595a-4931-810c-2820c25386ac" mode="Transparent" x="42" y="73" width="20" height="1" backcolor="#FFFFFF"/>
+		</element>
+	</background>
+	<title height="104" splitType="Stretch">
+		<element kind="staticText" uuid="77e5f357-287f-46bb-a2ca-428ae6225aa5" x="0" y="0" width="802" height="67" fontSize="42.0" bold="true" hTextAlign="Center" vTextAlign="Middle" style="Title">
+			<text><![CDATA[Doctor Report]]></text>
+		</element>
+	</title>
+	<pageFooter height="39" splitType="Stretch">
+		<element kind="textField" uuid="cc434357-2dc8-4be7-ba91-1828360d1ee6" x="671" y="0" width="131" height="20" forecolor="#000000" fontSize="12.0" pattern="EEEEE dd MMMMM yyyy" bold="false" hTextAlign="Right" style="Column header">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+	</pageFooter>
+	<summary height="200" splitType="Stretch">
+		<element kind="component" uuid="93782cd9-a03f-4d00-a3f2-62961338d1e5" x="0" y="0" width="802" height="60">
+			<component kind="table">
+				<datasetRun uuid="23953d72-8851-425d-b892-d27af03f287a" subDataset="tableDataset">
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				</datasetRun>
+				<column kind="single" uuid="621d3d5f-30e0-4066-a974-9f133e6df45d" width="90">
+					<columnHeader height="25" style="Table_CH">
+						<element kind="staticText" uuid="9d22834a-004e-43a2-8811-60cc244454c8" key="" x="0" y="0" width="90" height="25" fontName="Arial" fontSize="16.0" bold="true" hTextAlign="Center" style="Table_CH_Label">
+							<text><![CDATA[Doctor_id]]></text>
+							<box leftPadding="2" style="Table_CH_Label"/>
+						</element>
+					</columnHeader>
+					<detailCell height="25" style="Table_TD">
+						<element kind="textField" uuid="5e1090a1-7fd7-429b-b17c-f4bd95977dfe" x="0" y="0" width="90" height="25" fontName="Arial" fontSize="12.0" style="Detail">
+							<expression><![CDATA[$F{doctor_id}]]></expression>
+							<box leftPadding="2" style="Detail"/>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+				</column>
+				<column kind="single" uuid="2198e13b-e0df-4e9d-baf1-470dde353684" width="140">
+					<columnHeader height="25" style="Table_CH">
+						<element kind="staticText" uuid="536174a4-da80-448c-957d-16c482813504" key="" x="0" y="0" width="140" height="25" fontName="Arial" fontSize="16.0" bold="true" hTextAlign="Center" style="Table_CH_Label">
+							<text><![CDATA[Name]]></text>
+							<box leftPadding="2" style="Table_CH_Label"/>
+						</element>
+					</columnHeader>
+					<detailCell height="25" style="Table_TD">
+						<element kind="textField" uuid="82a8da34-63bc-4a93-bf18-04dddbc1131a" x="0" y="0" width="140" height="25" fontName="Arial" fontSize="12.0" style="Detail">
+							<expression><![CDATA[$F{name}]]></expression>
+							<box leftPadding="2" style="Detail"/>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+				</column>
+				<column kind="single" uuid="9590e06c-cde3-43fc-af36-f677f70cc20e" width="110">
+					<columnHeader height="25" style="Table_CH">
+						<element kind="staticText" uuid="04c57f04-a46d-4926-ab04-884696c07a00" key="" x="0" y="0" width="110" height="25" fontName="Arial" fontSize="16.0" bold="true" hTextAlign="Center" style="Table_CH_Label">
+							<text><![CDATA[Specialty]]></text>
+							<box leftPadding="2" style="Table_CH_Label"/>
+						</element>
+					</columnHeader>
+					<detailCell height="25" style="Table_TD">
+						<element kind="textField" uuid="bb993130-83b5-47a6-b226-72b2f0cf6e85" x="0" y="0" width="110" height="25" fontName="Arial" fontSize="12.0" style="Detail">
+							<expression><![CDATA[$F{specialty}]]></expression>
+							<box leftPadding="2" style="Detail"/>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+				</column>
+				<column kind="single" uuid="3e7dae3b-a84e-492f-89d0-16e0f79164d5" width="120">
+					<columnHeader height="25" style="Table_CH">
+						<element kind="staticText" uuid="4a1fdc00-171d-48d0-ba14-a18ed7ba5ba0" key="" x="0" y="0" width="120" height="25" fontName="Arial" fontSize="16.0" bold="true" hTextAlign="Center" style="Table_CH_Label">
+							<text><![CDATA[Availability]]></text>
+							<box leftPadding="2" style="Table_CH_Label"/>
+						</element>
+					</columnHeader>
+					<detailCell height="25" style="Table_TD">
+						<element kind="textField" uuid="b2a16e08-5d35-4b57-8e9d-b9579160a9f9" x="0" y="0" width="120" height="25" fontName="Arial" fontSize="12.0" style="Detail">
+							<expression><![CDATA[$F{availability}]]></expression>
+							<box leftPadding="2" style="Detail"/>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+				</column>
+				<column kind="single" uuid="94ef740b-1f1e-4c20-a3fa-417bccf2be1c" width="130">
+					<columnHeader height="25" style="Table_CH">
+						<element kind="staticText" uuid="998187ba-7aee-4cfa-83e9-55662e310a65" key="" x="0" y="0" width="130" height="25" fontName="Arial" fontSize="16.0" bold="true" hTextAlign="Center" style="Table_CH_Label">
+							<text><![CDATA[Qualifications]]></text>
+							<box leftPadding="2" style="Table_CH_Label"/>
+						</element>
+					</columnHeader>
+					<detailCell height="25" style="Table_TD">
+						<element kind="textField" uuid="25f9f9dc-f51f-4527-8817-39526b82b64e" x="0" y="0" width="130" height="25" fontName="Arial" fontSize="12.0" style="Detail">
+							<expression><![CDATA[$F{qualifications}]]></expression>
+							<box leftPadding="2" style="Detail"/>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+				</column>
+				<column kind="single" uuid="4f4ff46a-0f36-4efe-9a31-fa4023a0c7ba" width="110">
+					<columnHeader height="25" style="Table_CH">
+						<element kind="staticText" uuid="2fb577a3-558b-44c0-b4e5-d7e26b2d1738" key="" x="0" y="0" width="110" height="25" fontName="Arial" fontSize="16.0" bold="true" hTextAlign="Center" style="Table_CH_Label">
+							<text><![CDATA[Contact]]></text>
+							<box leftPadding="2" style="Table_CH_Label"/>
+						</element>
+					</columnHeader>
+					<detailCell height="25" style="Table_TD">
+						<element kind="textField" uuid="8a7a0295-d4fc-44d6-8d8e-ec14da09a843" x="0" y="0" width="110" height="25" fontName="Arial" fontSize="12.0" style="Detail">
+							<expression><![CDATA[$F{contact_details}]]></expression>
+							<box leftPadding="2" style="Detail"/>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+				</column>
+				<column kind="single" uuid="89f68a68-fbc7-4a07-8ae4-5da19749bffb" width="102">
+					<columnHeader height="25" style="Table_CH">
+						<element kind="staticText" uuid="c7cc142d-3ce7-4405-b926-4afacdea507a" key="" x="0" y="0" width="102" height="25" fontName="Arial" fontSize="16.0" bold="true" hTextAlign="Center" style="Table_CH_Label">
+							<text><![CDATA[Email]]></text>
+							<box leftPadding="2" style="Table_CH_Label"/>
+						</element>
+					</columnHeader>
+					<detailCell height="25" style="Table_TD">
+						<element kind="textField" uuid="3227686f-57f0-402a-9ec8-f0c5a9855666" x="0" y="0" width="102" height="25" fontName="Arial" fontSize="12.0" style="Detail">
+							<expression><![CDATA[$F{email}]]></expression>
+							<box leftPadding="2" style="Detail"/>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+				</column>
+			</component>
+			<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+			<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+			<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+		</element>
+		<property name="local_mesure_unitheight" value="pixel"/>
+	</summary>
+</jasperReport>

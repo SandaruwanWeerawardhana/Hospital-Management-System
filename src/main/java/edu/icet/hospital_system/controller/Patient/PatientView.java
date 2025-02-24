@@ -1,5 +1,6 @@
 package edu.icet.hospital_system.controller.Patient;
 
+import edu.icet.hospital_system.DB.DBConnection;
 import edu.icet.hospital_system.dto.Appointment;
 import edu.icet.hospital_system.dto.Prescription;
 import edu.icet.hospital_system.service.ServiceFactory;
@@ -10,6 +11,7 @@ import edu.icet.hospital_system.util.PatientUtil;
 import edu.icet.hospital_system.util.ServiceType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -17,9 +19,16 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class PatientView implements Initializable {
@@ -98,6 +107,26 @@ public class PatientView implements Initializable {
         lblID.setText(PatientUtil.get().getPatient_id().toString());
         loadPrecription();
         loadAppointment();
+    }
+
+    public void btnActionReport(ActionEvent actionEvent) {
+        try {
+
+            JasperDesign design = JRXmlLoader.load("src/main/resources/Report/prescription.jrxml");
+            JasperReport jasperReport = JasperCompileManager.compileReport(design);
+
+
+            Map<String, Object> parameters = new HashMap<>();
+            parameters.put("patient_id", PatientUtil.get().getPatient_id());
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, DBConnection.getInstance().getConnection());
+            JasperExportManager.exportReportToPdfFile(jasperPrint, "Prescription.pdf");
+            JasperViewer.viewReport(jasperPrint, false);
+
+        } catch (SQLException | JRException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
     }
 }
 
