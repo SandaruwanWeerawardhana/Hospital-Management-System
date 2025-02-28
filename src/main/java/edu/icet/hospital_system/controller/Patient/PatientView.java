@@ -6,9 +6,9 @@ import edu.icet.hospital_system.dto.Prescription;
 import edu.icet.hospital_system.service.ServiceFactory;
 import edu.icet.hospital_system.service.custom.AppointmentService;
 import edu.icet.hospital_system.service.custom.PrescriptionService;
-import edu.icet.hospital_system.util.DoctorUtil;
 import edu.icet.hospital_system.util.PatientUtil;
 import edu.icet.hospital_system.util.ServiceType;
+import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,6 +19,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
@@ -31,7 +32,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class PatientView implements Initializable {
+public class PatientView extends Application implements Initializable {
 
     public AnchorPane ViewAnchorpane;
     public Label lblID;
@@ -99,7 +100,6 @@ public class PatientView implements Initializable {
 
         colDate.setCellValueFactory(new PropertyValueFactory<>("appointment_date"));
         colTime.setCellValueFactory(new PropertyValueFactory<>("time"));
-//        colID.setCellValueFactory(new PropertyValueFactory<>(""));
     }
 
     @Override
@@ -127,6 +127,11 @@ public class PatientView implements Initializable {
             e.printStackTrace();
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+
     }
 }
 

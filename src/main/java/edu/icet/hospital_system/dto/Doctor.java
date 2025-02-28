@@ -17,6 +17,7 @@ public class Doctor {
     private String availability;
     private String qualifications;
     private String contact_details;
+    private Double price;
     private String email;
     private String password;
 }

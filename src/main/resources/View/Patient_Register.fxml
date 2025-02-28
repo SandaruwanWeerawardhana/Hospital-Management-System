@@ -26,7 +26,7 @@
       </ImageView>
       <Text layoutX="474.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Create Patient Account" textAlignment="CENTER" wrappingWidth="390.1368408203125">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
          <fill>
             <LinearGradient endX="1.0" endY="1.0" startX="0.3333333179806218" startY="0.2878788023283988">
@@ -45,18 +45,18 @@
             </LinearGradient>
          </fill>
       </Text>
-      <JFXButton id="btnLogin" fx:id="btnSingUp" layoutX="627.0" layoutY="528.0" onAction="#btnSingUpAction" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #000066;" text="Sing Up" textFill="WHITE">
+      <JFXButton id="btnLogin" fx:id="btnSingUp" layoutX="548.0" layoutY="528.0" onAction="#btnSingUpAction" prefHeight="32.0" prefWidth="279.0" style="-fx-background-color: #000066;" text="Sign Up" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
       <JFXComboBox fx:id="ChoiseBoxGender" layoutX="551.0" layoutY="279.0" prefHeight="26.0" prefWidth="279.0" promptText="Gender" />
       <JFXTextField fx:id="txtName" layoutX="551.0" layoutY="187.0" prefHeight="26.0" prefWidth="279.0" promptText="Name" />
-      <JFXTextField fx:id="txtAge" layoutX="551.0" layoutY="236.0" prefHeight="26.0" prefWidth="279.0" promptText="Age" />
-      <JFXTextField fx:id="txtEmergencyContact" layoutX="551.0" layoutY="387.0" prefHeight="26.0" prefWidth="279.0" promptText="Emergency Contact" />
-      <JFXTextField fx:id="txtEmail" layoutX="551.0" layoutY="434.0" prefHeight="26.0" prefWidth="279.0" promptText="Email" />
-      <JFXTextField fx:id="txtPassword" layoutX="551.0" layoutY="484.0" prefHeight="26.0" prefWidth="279.0" promptText="Password " />
-      <JFXTextField fx:id="txtMedicalHistory" layoutX="551.0" layoutY="332.0" prefHeight="26.0" prefWidth="279.0" promptText="Medical History" />
+      <JFXTextField fx:id="txtAge" layoutX="551.0" layoutY="235.0" prefHeight="26.0" prefWidth="279.0" promptText="Age" />
+      <JFXTextField fx:id="txtEmergencyContact" layoutX="551.0" layoutY="384.0" prefHeight="26.0" prefWidth="279.0" promptText="Emergency Contact" />
+      <JFXTextField fx:id="txtEmail" layoutX="551.0" layoutY="433.0" prefHeight="26.0" prefWidth="279.0" promptText="Email" />
+      <JFXTextField fx:id="txtPassword" layoutX="551.0" layoutY="483.0" prefHeight="26.0" prefWidth="279.0" promptText="Password " />
+      <JFXTextField fx:id="txtMedicalHistory" layoutX="551.0" layoutY="330.0" prefHeight="26.0" prefWidth="279.0" promptText="Medical History" />
       <JFXButton layoutX="414.0" layoutY="-1.0" onAction="#BackAction" prefHeight="48.0" prefWidth="62.0">
          <graphic>
             <ImageView fitHeight="39.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">

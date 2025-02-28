@@ -25,7 +25,7 @@
       </ImageView>
       <Text layoutX="475.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Create Doctor Account" textAlignment="CENTER" wrappingWidth="390.1368408203125">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
          <fill>
             <LinearGradient endX="1.0" endY="1.0" startX="0.3333333179806218" startY="0.2878788023283988">
@@ -44,10 +44,10 @@
             </LinearGradient>
          </fill>
       </Text>
-      <JFXTextField fx:id="txtQulification" layoutX="531.0" layoutY="326.0" prefHeight="26.0" prefWidth="279.0" promptText="Qualifications" />
-      <JFXButton id="btnLogin" fx:id="btnSingUp" layoutX="606.0" layoutY="490.0" onAction="#btnSingUpAction" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #000066;" text="Sing Up" textFill="WHITE">
+      <JFXTextField fx:id="txtQulification" layoutX="531.0" layoutY="325.0" prefHeight="26.0" prefWidth="279.0" promptText="Qualifications" />
+      <JFXButton id="btnLogin" fx:id="btnSingUp" layoutX="527.0" layoutY="490.0" onAction="#btnSingUpAction" prefHeight="30.0" prefWidth="279.0" style="-fx-background-color: #000066;" text="Sign Up" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
       <JFXTextField fx:id="txtName" layoutX="531.0" layoutY="186.0" prefHeight="26.0" prefWidth="279.0" promptText="Name" />

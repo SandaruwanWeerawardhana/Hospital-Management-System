@@ -13,18 +13,18 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="loadAnchorePaneLogin" prefHeight="623.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Login.LoginFormController">
-   <children>
-      <ImageView fitHeight="609.0" fitWidth="455.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+      <children>
+      <ImageView fitHeight="609.0" fitWidth="549.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Image/login2.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="258.0" fitWidth="256.0" layoutX="547.0" layoutY="-29.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="316.0" fitWidth="318.0" layoutX="515.0" layoutY="-33.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Image/Logo_enhanced.png" />
          </image>
       </ImageView>
-      <Text layoutX="542.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Welcome" textAlignment="CENTER" wrappingWidth="266.1368408203125">
+      <Text layoutX="542.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" textAlignment="CENTER" wrappingWidth="266.1368408203125">
          <font>
             <Font name="System Bold" size="35.0" />
          </font>
@@ -45,14 +45,14 @@
             </LinearGradient>
          </fill>
       </Text>
-      <JFXTextField fx:id="txtEmail" layoutX="556.0" layoutY="290.0" prefHeight="26.0" prefWidth="238.0" promptText="Email " />
+      <JFXTextField fx:id="txtEmail" layoutX="556.0" layoutY="295.0" prefHeight="26.0" prefWidth="238.0" promptText="Email " />
       <JFXTextField fx:id="txtPassword" layoutX="556.0" layoutY="348.0" prefHeight="26.0" prefWidth="238.0" promptText="Password " />
-      <JFXButton id="btnLogin" fx:id="btnLogin" layoutX="623.0" layoutY="404.0" onAction="#btnLoginAction" prefHeight="26.0" prefWidth="94.0" style="-fx-background-color: #000066;" text="Login" textFill="WHITE">
+      <JFXButton id="btnLogin" fx:id="btnLogin" layoutX="556.0" layoutY="404.0" onAction="#btnLoginAction" prefHeight="26.0" prefWidth="238.0" style="-fx-background-color: #000066;" text="Login" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="15.0" />
          </font></JFXButton>
-      <Text layoutX="575.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don’t you have account" wrappingWidth="128.53662109375" />
-      <JFXButton fx:id="btnRegister" layoutX="693.0" layoutY="446.0" onAction="#btnRegisterAction" prefHeight="26.0" prefWidth="71.0" text="Register" textFill="#0900ff">
+      <Text layoutX="582.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don’t you have account" wrappingWidth="128.53662109375" />
+      <JFXButton fx:id="btnRegister" layoutX="700.0" layoutY="448.0" onAction="#btnRegisterAction" prefHeight="26.0" prefWidth="71.0" text="Register" textFill="#0900ff">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>

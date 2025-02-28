@@ -6,10 +6,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+@Getter
 public class DBConnection {
     private static DBConnection instance;
-    @Getter
-    private Connection connection;
+    private final Connection connection;
     private DBConnection() throws SQLException {
         String URL="jdbc:mysql://localhost:3306/hospital";
         String userName="root";

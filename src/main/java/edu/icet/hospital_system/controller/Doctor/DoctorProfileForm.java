@@ -26,6 +26,7 @@ public class DoctorProfileForm implements Initializable {
     public JFXTextField txtPassword;
     public JFXTextField txtName;
     public JFXTextField txtContact;
+    public JFXTextField txtPrice;
     @FXML
     private AnchorPane DashboardLoadAnchorpane;
 
@@ -60,6 +61,7 @@ public class DoctorProfileForm implements Initializable {
             txtAvalibility.clear();
             txtQulification.clear();
             txtContact.clear();
+            txtPrice.clear();
             txtEmail.clear();
             txtPassword.clear();
             new Alert(Alert.AlertType.INFORMATION, "Delete Success").show();
@@ -79,6 +81,7 @@ public class DoctorProfileForm implements Initializable {
                 txtAvalibility.getText(),
                 txtQulification.getText(),
                 txtContact.getText(),
+                Double.parseDouble(txtPrice.getText()),
                 txtEmail.getText(),
                 Password.getInstance().encryptPassword(txtPassword.getText())
         );
@@ -100,6 +103,7 @@ public class DoctorProfileForm implements Initializable {
             txtAvalibility.setText(doctor.getAvailability());
             txtQulification.setText(doctor.getQualifications());
             txtContact.setText(doctor.getContact_details());
+            txtPrice.setText(doctor.getPrice().toString());
             txtEmail.setText(doctor.getEmail());
             txtPassword.setText(Password.getInstance().decryptPassword(doctor.getPassword()));
         } else {

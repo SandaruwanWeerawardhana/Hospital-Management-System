@@ -34,9 +34,8 @@
       </Label>
       <TableView fx:id="tlbAppointment" layoutX="15.0" layoutY="338.0" prefHeight="200.0" prefWidth="693.0">
          <columns>
-            <TableColumn fx:id="colDate" prefWidth="134.40008544921875" text="Date" />
-            <TableColumn fx:id="colTime" prefWidth="101.59994506835938" text="Time" />
-            <TableColumn fx:id="colAvailability" prefWidth="110.39990234375" text="Availability" />
+            <TableColumn fx:id="colDate" prefWidth="342.39996910095215" text="Date" />
+            <TableColumn fx:id="colTime" prefWidth="349.5999450683594" text="Time" />
          </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

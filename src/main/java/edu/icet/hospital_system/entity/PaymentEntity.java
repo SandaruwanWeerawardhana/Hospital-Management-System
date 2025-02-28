@@ -28,7 +28,13 @@ public class PaymentEntity {
     @Column(name = "payment_status")
     private String payment_status;
 
-    @Column(name = "generated_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "generated_date", updatable = false)
     private Date generated_date;
+
+    @PrePersist
+    protected void onCreate() {
+        generated_date = new Date();
+    }
 
 }

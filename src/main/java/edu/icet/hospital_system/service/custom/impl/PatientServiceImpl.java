@@ -1,8 +1,6 @@
 package edu.icet.hospital_system.service.custom.impl;
 
-import edu.icet.hospital_system.dto.Doctor;
 import edu.icet.hospital_system.dto.Patient;
-import edu.icet.hospital_system.entity.DoctorEntity;
 import edu.icet.hospital_system.entity.PatientEntity;
 import edu.icet.hospital_system.repository.DaoFactory;
 import edu.icet.hospital_system.repository.custom.PatientDao;

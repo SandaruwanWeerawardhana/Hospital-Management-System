@@ -1,8 +1,6 @@
 package edu.icet.hospital_system.service.custom.impl;
 
-import edu.icet.hospital_system.dto.Appointment;
 import edu.icet.hospital_system.dto.Prescription;
-import edu.icet.hospital_system.entity.AppointmentEntity;
 import edu.icet.hospital_system.entity.PrescriptionEntity;
 import edu.icet.hospital_system.repository.DaoFactory;
 import edu.icet.hospital_system.repository.custom.PrescriptionDao;
@@ -35,7 +33,7 @@ public class PrescriptionServiceImpl implements PrescriptionService {
     @Override
     public List<Prescription> getAll(Integer id) {
         List<PrescriptionEntity> prescriptionEntities = prescriptionDao.getAll(id);
-        if(prescriptionEntities==null)return null;
+        if(prescriptionEntities==null)return Collections.emptyList();
         List<Prescription> prescriptions = new ArrayList<>();
         prescriptionEntities.forEach(entity -> prescriptions.add(new ModelMapper().map(entity,Prescription.class)));
         return prescriptions;
@@ -45,7 +43,7 @@ public class PrescriptionServiceImpl implements PrescriptionService {
     @Override
     public List<Prescription> getAllByPatientID(Integer id) {
         List<PrescriptionEntity> prescriptionEntities = prescriptionDao.getAllByPatientID(id);
-        if(prescriptionEntities==null)return null;
+        if(prescriptionEntities==null)return Collections.emptyList();
         List<Prescription> prescriptions = new ArrayList<>();
         prescriptionEntities.forEach(entity -> prescriptions.add(new ModelMapper().map(entity,Prescription.class)));
         return prescriptions;

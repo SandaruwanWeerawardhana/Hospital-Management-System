@@ -12,9 +12,10 @@ import java.util.List;
 
 public class AdminServiceImpl implements AdminService {
     AdminDao adminDao = DaoFactory.getInstance().getDaoType(DaoType.ADMIN);
+
     @Override
     public boolean addAdmin(Admin admin) {
-        AdminEntity entity = new ModelMapper().map(admin,AdminEntity.class);
+        AdminEntity entity = new ModelMapper().map(admin, AdminEntity.class);
         return adminDao.add(entity);
     }
 
@@ -25,7 +26,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public boolean updateAdmin(Admin admin) {
-        return adminDao.update(new ModelMapper().map(admin,AdminEntity.class));
+        return adminDao.update(new ModelMapper().map(admin, AdminEntity.class));
     }
 
     @Override
@@ -36,6 +37,6 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Admin getEmail(String email) {
         AdminEntity adminEntity = adminDao.getEmail(email);
-        return adminEntity==null? null : new ModelMapper().map(adminEntity,Admin.class);
+        return adminEntity == null ? null : new ModelMapper().map(adminEntity, Admin.class);
     }
 }

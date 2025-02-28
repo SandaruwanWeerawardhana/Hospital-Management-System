@@ -60,6 +60,7 @@ public class DoctorFormController {
                         txtAvalibility.getText(),
                         txtQulification.getText(),
                         txtContact.getText(),
+                        0.0,
                         txtEmail.getText(),
                         Password.getInstance().encryptPassword(txtPassword.getText())
                 );

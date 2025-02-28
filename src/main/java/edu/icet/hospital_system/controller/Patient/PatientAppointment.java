@@ -28,6 +28,7 @@ import java.util.ResourceBundle;
 public class PatientAppointment implements Initializable {
 
     public Label lblPatientID;
+    public TableColumn colPrice;
     @FXML
     private AnchorPane DashboardLoadAnchorpane;
 
@@ -105,6 +106,7 @@ public class PatientAppointment implements Initializable {
         colDoctorName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colSpecialty.setCellValueFactory(new PropertyValueFactory<>("specialty"));
         colAvailability.setCellValueFactory(new PropertyValueFactory<>("availability"));
+        colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
     }
 
     @Override

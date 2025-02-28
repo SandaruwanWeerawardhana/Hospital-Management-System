@@ -37,8 +37,8 @@
       <JFXTextField fx:id="txtQulification" layoutX="50.0" layoutY="306.0" prefHeight="26.0" prefWidth="279.0" promptText="Qualifications" />
       <JFXTextField fx:id="txtName" layoutX="50.0" layoutY="129.0" prefHeight="26.0" prefWidth="279.0" promptText="Name" />
       <JFXTextField fx:id="txtSpecialty" layoutX="50.0" layoutY="187.0" prefHeight="26.0" prefWidth="279.0" promptText="Specialty" />
-      <JFXTextField fx:id="txtEmail" layoutX="50.0" layoutY="404.0" prefHeight="26.0" prefWidth="279.0" promptText="Email" />
-      <JFXTextField fx:id="txtPassword" layoutX="50.0" layoutY="461.0" prefHeight="26.0" prefWidth="279.0" promptText="Password " />
+      <JFXTextField fx:id="txtEmail" layoutX="49.0" layoutY="457.0" prefHeight="26.0" prefWidth="279.0" promptText="Email" />
+      <JFXTextField fx:id="txtPassword" layoutX="49.0" layoutY="514.0" prefHeight="26.0" prefWidth="279.0" promptText="Password " />
       <JFXTextField fx:id="txtAvalibility" layoutX="49.0" layoutY="253.0" prefHeight="26.0" prefWidth="279.0" promptText="Availability" />
       <Label fx:id="lblId" layoutX="81.0" layoutY="4.0" prefHeight="30.0" prefWidth="73.0" text="-" textFill="#2fa928">
          <font>
@@ -46,5 +46,6 @@
          </font>
       </Label>
       <JFXTextField fx:id="txtContact" layoutX="49.0" layoutY="358.0" prefHeight="26.0" prefWidth="279.0" promptText="Contact" />
+      <JFXTextField fx:id="txtPrice" layoutX="50.0" layoutY="411.0" prefHeight="26.0" prefWidth="279.0" promptText="Contact" text="Price" />
    </children>
 </AnchorPane>

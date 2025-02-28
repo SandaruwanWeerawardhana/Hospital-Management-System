@@ -29,6 +29,9 @@ public class DoctorEntity {
     @Column(name = "contact_details")
     private String contact_details;
 
+    @Column(name = "price")
+    private Double price;
+
     @Column(name = "email")
     private String email;
 
