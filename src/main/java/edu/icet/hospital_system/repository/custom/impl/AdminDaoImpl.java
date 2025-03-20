@@ -6,6 +6,7 @@ import edu.icet.hospital_system.repository.custom.AdminDao;
 import edu.icet.hospital_system.util.HibernateConfig;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -76,7 +77,13 @@ public class AdminDaoImpl implements AdminDao {
 
     @Override
     public List<AdminEntity> getAllData() {
-        return List.of();
+        Session session = HibernateConfig.getSession();
+        Transaction tx = session.beginTransaction();
+        Query<AdminEntity> query = session.createQuery("FROM admin", AdminEntity.class);
+        List<AdminEntity> Entities = query.list();
+        tx.commit();
+        return Entities;
+
     }
 
     @Override

@@ -10,7 +10,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -20,6 +23,7 @@ import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -85,5 +89,17 @@ public class AdminDoctor implements Initializable {
         colAvailability.setCellValueFactory(new PropertyValueFactory<>("availability"));
         colQualifications.setCellValueFactory(new PropertyValueFactory<>("qualifications"));
         colContact.setCellValueFactory(new PropertyValueFactory<>("contact_details"));
+    }
+
+    public void btnaddAction(ActionEvent actionEvent) {
+
+        try {
+            DashboardLoadAnchorpane.getChildren().clear();
+            Object load = FXMLLoader.load(getClass().getResource("/View/Doctor_Register.fxml"));
+            DashboardLoadAnchorpane.getChildren().add((Node) load);
+
+        } catch (IOException e) {
+            new Alert(Alert.AlertType.ERROR, "Failed to load view: " + e.getMessage()).show();
+        }
     }
 }

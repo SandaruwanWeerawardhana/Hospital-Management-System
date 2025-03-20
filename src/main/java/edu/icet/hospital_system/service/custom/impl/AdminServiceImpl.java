@@ -8,6 +8,7 @@ import edu.icet.hospital_system.service.custom.AdminService;
 import edu.icet.hospital_system.util.DaoType;
 import org.modelmapper.ModelMapper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdminServiceImpl implements AdminService {
@@ -31,7 +32,10 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public List<Admin> getAll() {
-        return List.of();
+        List<AdminEntity> entities = adminDao.getAllData();
+        List<Admin> admins = new ArrayList<>();
+        entities.forEach(e ->new ModelMapper().map(e,Admin.class));
+        return admins;
     }
 
     @Override

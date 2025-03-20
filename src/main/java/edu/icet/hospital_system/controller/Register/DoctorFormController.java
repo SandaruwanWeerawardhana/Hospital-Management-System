@@ -56,9 +56,9 @@ public class DoctorFormController {
                 Doctor doctor = new Doctor(
                         0,
                         txtName.getText(),
-                        txtSpecialty.getText(),
-                        txtAvalibility.getText(),
-                        txtQulification.getText(),
+                        null,
+                        null,
+                        null,
                         txtContact.getText(),
                         0.0,
                         txtEmail.getText(),

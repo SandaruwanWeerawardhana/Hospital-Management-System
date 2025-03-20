@@ -21,7 +21,12 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <JFXButton layoutX="297.0" layoutY="448.0" onAction="#btnReportAction" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: #e04372;" text="Generate Report">
+      <JFXButton layoutX="579.0" layoutY="447.0" onAction="#btnReportAction" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: #e04372;" text="Generate Report">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="16.0" layoutY="447.0" onAction="#btnaddAction" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: green;" text="Add Doctor">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
