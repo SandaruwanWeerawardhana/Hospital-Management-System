@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="AnchorePaneDoctorMain" prefHeight="623.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Doctor.DoctorDashboardForm">
+<AnchorPane fx:id="AnchorePaneDoctorMain" prefHeight="623.0" prefWidth="929.0" style="-fx-background-color: #eefced;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.hospital_system.controller.Doctor.DoctorDashboardForm">
    <children>
       <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#014e16" height="628.0" layoutX="6.0" layoutY="4.0" stroke="BLACK" strokeType="INSIDE" width="191.0" />
       <Rectangle arcHeight="100.0" arcWidth="100.0" fill="WHITE" height="121.0" layoutX="39.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="129.0" />
@@ -22,9 +22,9 @@
             <Image url="@../Image/user.png" />
          </image>
       </ImageView>
-      <Text layoutX="378.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Doctor Dashboard" textAlignment="CENTER" wrappingWidth="418.1368408203125">
+      <Text layoutX="359.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Doctor Dashboard" textAlignment="CENTER" wrappingWidth="418.1368408203125">
          <font>
-            <Font name="System Bold" size="22.0" />
+            <Font name="System Bold" size="17.0" />
          </font>
          <fill>
             <LinearGradient endX="1.0" endY="1.0" startX="0.3333333179806218" startY="0.2878788023283988">
@@ -43,17 +43,17 @@
             </LinearGradient>
          </fill>
       </Text>
-      <JFXButton fx:id="btnAappointment" layoutX="32.0" layoutY="415.0" onAction="#btnAappointmentAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ffff;" text="Appointment">
+      <JFXButton fx:id="btnAappointment" layoutX="32.0" layoutY="415.0" onAction="#btnAappointmentAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #d2facf;" text="Appointment">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnProfile" layoutX="32.0" layoutY="329.0" onAction="#btnProfileAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ff9999;" text="Profile">
+      <JFXButton fx:id="btnProfile" layoutX="32.0" layoutY="329.0" onAction="#btnProfileAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #d2facf;" text="Profile">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="30.0" layoutY="243.0" onAction="#btnPrescriptionAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ffff;" text="Prescription">
+      <JFXButton layoutX="30.0" layoutY="243.0" onAction="#btnPrescriptionAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #d2facf;" text="Prescription">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

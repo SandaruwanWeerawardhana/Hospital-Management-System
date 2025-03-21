@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -42,7 +43,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <JFXButton layoutX="32.0" layoutY="304.0" onAction="#btnPatientAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ffff;" text="Patient">
+      <JFXButton layoutX="32.0" layoutY="304.0" onAction="#btnPatientAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ff9999;" text="Patient">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -52,7 +53,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="30.0" layoutY="243.0" onAction="#btnDoctorAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ffff;" text="Doctor">
+      <JFXButton layoutX="30.0" layoutY="243.0" onAction="#btnDoctorAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ff9999;" text="Doctor">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -69,13 +70,16 @@
          </font>
       </Label>
       <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#062f56" height="91.0" layoutX="690.0" layoutY="43.0" stroke="BLACK" strokeType="INSIDE" width="207.0" />
-      <AnchorPane fx:id="DashboardLoadAnchorpaneAdmin" layoutX="202.0" layoutY="138.0" prefHeight="482.0" prefWidth="724.0" />
-      <JFXButton layoutX="30.0" layoutY="367.0" onAction="#btnPaymentAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ffff;" text="Payment">
+      <AnchorPane fx:id="DashboardLoadAnchorpaneAdmin" layoutX="202.0" layoutY="138.0" prefHeight="482.0" prefWidth="724.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets></AnchorPane>
+      <JFXButton layoutX="30.0" layoutY="367.0" onAction="#btnPaymentAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ff9999;" text="Payment">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="32.0" layoutY="428.0" onAction="#btnAappointmentAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ffff;" text="Appointment">
+      <JFXButton layoutX="32.0" layoutY="428.0" onAction="#btnAappointmentAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ff9999;" text="Appointment">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -222,7 +226,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <JFXButton layoutX="32.0" layoutY="486.0" onAction="#btnViewAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ffff;" text="View">
+      <JFXButton layoutX="32.0" layoutY="486.0" onAction="#btnViewAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: #ff9999;" text="View">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -231,6 +235,18 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
+      </JFXButton>
+      <JFXButton layoutX="202.0" onAction="#btnAdminRegister" prefHeight="23.0" prefWidth="58.0" style="-fx-background-color: #ffff;" text="Add">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="34.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/icons8-plus-128.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </JFXButton>
    </children>
 </AnchorPane>

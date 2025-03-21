@@ -1,9 +1,7 @@
 package edu.icet.hospital_system.controller.Admin;
 
 import com.jfoenix.controls.JFXButton;
-import edu.icet.hospital_system.dto.Doctor;
 import edu.icet.hospital_system.service.ServiceFactory;
-import edu.icet.hospital_system.service.custom.AppointmentService;
 import edu.icet.hospital_system.service.custom.DoctorService;
 import edu.icet.hospital_system.service.custom.PatientService;
 import edu.icet.hospital_system.service.custom.PaymentService;
@@ -14,9 +12,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -124,4 +124,10 @@ public class AdminDashboardForm implements Initializable {
 
     }
 
+    public void btnAdminRegister(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/Admin_Register.fxml"))));
+        stage.show();
+
+    }
 }
