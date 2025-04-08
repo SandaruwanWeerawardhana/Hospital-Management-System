@@ -68,7 +68,7 @@ public class DoctorAppointmentForm implements Initializable {
         colID.setCellValueFactory(new PropertyValueFactory<>("patient_id"));
         ColDate.setCellValueFactory(new PropertyValueFactory<>("appointment_date"));
         colTime.setCellValueFactory(new PropertyValueFactory<>("time"));
-//        colAction.setCellValueFactory(new PropertyValueFactory<>(""));
+
 
     }
 

@@ -49,7 +49,7 @@ public class DoctorServiceImpl implements DoctorService {
     @Override
     public Doctor doctorValidatioin(String email) {
         DoctorEntity doctorEntity = doctorDao.getEmail(email);
-        return doctorEntity==null? null:new ModelMapper().map(doctorEntity,Doctor.class);
+        return doctorEntity == null ? null : new ModelMapper().map(doctorEntity, Doctor.class);
     }
 
     @Override

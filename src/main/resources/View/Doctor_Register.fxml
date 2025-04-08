@@ -18,7 +18,7 @@
             <Image url="@../Image/login2.jpg" />
          </image>
       </ImageView>
-      <Text layoutX="390.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Register Doctor " textAlignment="CENTER" wrappingWidth="238.936767578125">
+      <Text layoutX="390.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Register Doctor " textAlignment="CENTER" wrappingWidth="238.936767578125">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
@@ -39,23 +39,20 @@
             </LinearGradient>
          </fill>
       </Text>
-      <JFXButton id="btnLogin" fx:id="btnSingUp" layoutX="370.0" layoutY="368.0" onAction="#btnSingUpAction" prefHeight="30.0" prefWidth="279.0" style="-fx-background-color: #000066;" text="Sign Up" textFill="WHITE">
+      <JFXButton id="btnLogin" fx:id="btnSingUp" layoutX="370.0" layoutY="393.0" onAction="#btnSingUpAction" prefHeight="31.0" prefWidth="279.0" style="-fx-background-color: #000066;" text="Sign Up" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <JFXTextField fx:id="txtName" layoutX="374.0" layoutY="124.0" prefHeight="26.0" prefWidth="279.0" promptText="Name" />
-      <JFXTextField fx:id="txtEmail" layoutX="374.0" layoutY="239.0" prefHeight="26.0" prefWidth="279.0" promptText="Email" />
-      <JFXTextField fx:id="txtPassword" layoutX="374.0" layoutY="300.0" prefHeight="26.0" prefWidth="279.0" promptText="Password " />
-      <JFXTextField fx:id="txtContact" layoutX="373.0" layoutY="183.0" prefHeight="26.0" prefWidth="279.0" promptText="Contact Number" />
-      <JFXButton layoutX="311.0" layoutY="3.0" onAction="#BackAction" prefHeight="42.0" prefWidth="22.0">
-         <graphic>
-            <ImageView fitHeight="39.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Image/Back.png" />
-               </image>
-            </ImageView>
-         </graphic>
+      <JFXTextField fx:id="txtName" layoutX="374.0" layoutY="232.0" prefHeight="26.0" prefWidth="279.0" promptText="Name" />
+      <JFXTextField fx:id="txtEmail" layoutX="374.0" layoutY="130.0" prefHeight="26.0" prefWidth="213.0" promptText="Email" />
+      <JFXTextField fx:id="txtPassword" layoutX="374.0" layoutY="338.0" prefHeight="26.0" prefWidth="279.0" promptText="Password " />
+      <JFXTextField fx:id="txtContact" layoutX="373.0" layoutY="291.0" prefHeight="26.0" prefWidth="279.0" promptText="Contact Number" />
+      <JFXTextField fx:id="txtotp" layoutX="375.0" layoutY="181.0" prefHeight="26.0" prefWidth="279.0" promptText="OTP" />
+      <JFXButton id="btnLogin" layoutX="591.0" layoutY="144.0" onAction="#btnOTPSend" prefHeight="27.0" prefWidth="63.0" style="-fx-background-color: #000066;" text="Send" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
       </JFXButton>
    </children>
 </AnchorPane>

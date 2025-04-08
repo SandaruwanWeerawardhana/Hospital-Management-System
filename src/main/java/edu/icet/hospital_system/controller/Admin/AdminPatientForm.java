@@ -23,6 +23,7 @@ import net.sf.jasperreports.view.JasperViewer;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class AdminPatientForm implements Initializable {
@@ -74,6 +75,10 @@ public class AdminPatientForm implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadTable();
+
+        String css = Objects.requireNonNull(this.getClass().getResource("/css/table.css")).toExternalForm();
+        tlbPatient.getStylesheets().add(css);
+
     }
 
     public void loadTable() {
