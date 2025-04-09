@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXTextField;
 import edu.icet.hospital_system.dto.Admin;
 import edu.icet.hospital_system.service.ServiceFactory;
 import edu.icet.hospital_system.service.custom.AdminService;
+import edu.icet.hospital_system.util.OTPManager;
 import edu.icet.hospital_system.util.Password;
 import edu.icet.hospital_system.util.ServiceType;
 import javafx.event.ActionEvent;
@@ -22,9 +23,8 @@ import java.util.regex.Pattern;
 public class AdminFormController {
 
     public AnchorPane DashboardLoadAnchorpane;
-
-    public JFXButton btnPrescription;
     public AnchorPane AdminAnchorePane;
+    public JFXTextField txtOTP;
     @FXML
     private JFXButton btnSingUpAdmin;
 
@@ -49,34 +49,49 @@ public class AdminFormController {
 
     @FXML
     void btnSingUpAdminAction(ActionEvent event) {
-        if ((txtName.getText().isEmpty() && txtNIC.getText().isEmpty() && txtEmail.getText().isEmpty() &&
-                txtAddress.getText().isEmpty() && txtContactNumber.getText().isEmpty() && txtPassword.getText().isEmpty())) {
+        String enteredOtp = txtOTP.getText();
+        String generatedOtp = OTPManager.getOTP(txtEmail.getText());
 
-            new Alert(Alert.AlertType.ERROR, "Fill All Detail").show();
-        } else {
-            if (validatePhoneNumber(txtContactNumber.getText()) && validateEmail(txtEmail.getText())) {
-                Admin admin = new Admin(
-                        0,
-                        txtName.getText(),
-                        txtNIC.getText(),
-                        txtAddress.getText(),
-                        txtContactNumber.getText(),
-                        txtEmail.getText(),
-                        Password.getInstance().encryptPassword(txtPassword.getText())
-                );
-                service.addAdmin(admin);
+        if (generatedOtp == null) {
+            new Alert(Alert.AlertType.ERROR, "No OTP found for this email. Please request a new one.").show();
+            return;
+        }
 
-                new Alert(Alert.AlertType.CONFIRMATION, "Added Success !").show();
+        if (enteredOtp.equals(generatedOtp)) {
 
-                txtName.clear();
-                txtNIC.clear();
-                txtAddress.clear();
-                txtContactNumber.clear();
-                txtEmail.clear();
-                txtPassword.clear();
+            if ((txtName.getText().isEmpty() && txtNIC.getText().isEmpty() && txtEmail.getText().isEmpty() &&
+                    txtAddress.getText().isEmpty() && txtContactNumber.getText().isEmpty() && txtPassword.getText().isEmpty())) {
+
+                new Alert(Alert.AlertType.ERROR, "Fill All Detail").show();
             } else {
-                new Alert(Alert.AlertType.WARNING, "Add Valid Detail").show();
+                if (validatePhoneNumber(txtContactNumber.getText()) && validateEmail(txtEmail.getText())) {
+                    Admin admin = new Admin(
+                            0,
+                            txtName.getText(),
+                            txtNIC.getText(),
+                            txtAddress.getText(),
+                            txtContactNumber.getText(),
+                            txtEmail.getText(),
+                            Password.getInstance().encryptPassword(txtPassword.getText())
+                    );
+                    service.addAdmin(admin);
+
+                    new Alert(Alert.AlertType.CONFIRMATION, "Added Success !").show();
+
+                    txtName.clear();
+                    txtNIC.clear();
+                    txtAddress.clear();
+                    txtContactNumber.clear();
+                    txtEmail.clear();
+                    txtOTP.clear();
+                    txtPassword.clear();
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "Add Valid Detail").show();
+                }
             }
+
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Invalid OTP. Try Again.").show();
         }
     }
 
@@ -105,4 +120,21 @@ public class AdminFormController {
 
         return matcher.matches();
     }
+
+    public void btnOTPAction(ActionEvent actionEvent) {
+        String email = txtEmail.getText();
+        if (email.isEmpty()) {
+            new Alert(Alert.AlertType.ERROR, "Enter your email!").show();
+        }
+
+        String otp = OTPManager.generateOTP();
+        OTPManager.storeOTP(email, otp);
+        OTPManager.sendOTP(email, otp);
+
+
+        new Alert(Alert.AlertType.INFORMATION, "OTP sent to your email.").show();
+    }
+
+
+
 }

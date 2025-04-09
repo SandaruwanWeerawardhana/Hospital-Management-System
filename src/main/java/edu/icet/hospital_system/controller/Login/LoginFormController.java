@@ -120,7 +120,7 @@ public class LoginFormController implements Initializable {
     @FXML
     void btnRegisterAction(ActionEvent event) throws IOException {
         loadAnchorePaneLogin.getChildren().clear();
-        Object load2 = FXMLLoader.load(getClass().getResource("/View/Register_selection.fxml"));
+        Object load2 = FXMLLoader.load(getClass().getResource("/View/Patient_Register.fxml"));
         loadAnchorePaneLogin.getChildren().add((Node) load2);
     }
 

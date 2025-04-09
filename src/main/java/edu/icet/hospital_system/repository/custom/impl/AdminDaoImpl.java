@@ -1,7 +1,6 @@
 package edu.icet.hospital_system.repository.custom.impl;
 
 import edu.icet.hospital_system.entity.AdminEntity;
-import edu.icet.hospital_system.entity.DoctorEntity;
 import edu.icet.hospital_system.repository.custom.AdminDao;
 import edu.icet.hospital_system.util.HibernateConfig;
 import org.hibernate.Session;
@@ -45,7 +44,6 @@ public class AdminDaoImpl implements AdminDao {
         }
     }
 
-
     @Override
     public boolean update(AdminEntity entity) {
         try (Session session = HibernateConfig.getSession()) {
@@ -68,7 +66,6 @@ public class AdminDaoImpl implements AdminDao {
             }
         }
     }
-
 
     @Override
     public List<AdminEntity> getAll(Integer id) {

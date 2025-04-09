@@ -14,11 +14,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 
-import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import java.util.Properties;
-import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -27,7 +22,6 @@ public class DoctorFormController {
     public JFXTextField txtContact;
     public AnchorPane DoctorAnchorePane;
     public JFXTextField txtotp;
-    private String generatedOTP;
     @FXML
     private JFXButton btnSingUp;
 
@@ -57,19 +51,16 @@ public class DoctorFormController {
 
         String email = txtEmail.getText();
         String enteredOtp = txtotp.getText();
+        String generatedOtp = OTPManager.getOTP(email);
 
-        if (sentEmailForOTP == null || !email.equals(sentEmailForOTP)) {
-            new Alert(Alert.AlertType.ERROR, "The email does not match the OTP recipient.").show();
+        if (generatedOtp == null) {
+            new Alert(Alert.AlertType.ERROR, "No OTP found for this email. Please request a new one.").show();
             return;
         }
 
-        // Verify OTP
-//        if (!OTPManager.verifyOTP(email, enteredOtp)) {
-//            new Alert(Alert.AlertType.ERROR, "Invalid OTP. Try Again.").show();
-//            return;
-//        }
+        if (enteredOtp.equals(generatedOtp)) {
 
-        if ((txtName.getText().isEmpty() && txtSpecialty.getText().isEmpty() && txtEmail.getText().isEmpty() &&
+            if ((txtName.getText().isEmpty() && txtSpecialty.getText().isEmpty() && txtEmail.getText().isEmpty() &&
                     txtQulification.getText().isEmpty() && txtAvalibility.getText().isEmpty() && txtContact.getText().isEmpty() && txtPassword.getText().isEmpty())) {
 
                 new Alert(Alert.AlertType.ERROR, "Fill All Detail").show();
@@ -94,11 +85,17 @@ public class DoctorFormController {
                     txtotp.clear();
                     txtContact.clear();
                     txtEmail.clear();
+                    txtotp.clear();
                     txtPassword.clear();
+                    OTPManager.clearOTP(email);
                 } else {
                     new Alert(Alert.AlertType.ERROR, "Added Fail").show();
                 }
             }
+
+        }else {
+            new Alert(Alert.AlertType.ERROR, "Invalid OTP. Try Again.").show();
+        }
 
     }
 
@@ -120,53 +117,13 @@ public class DoctorFormController {
         if (email.isEmpty()) {
             new Alert(Alert.AlertType.ERROR, "Enter your email!").show();
         }
-        String otp = generateOTP();
+
+        String otp = OTPManager.generateOTP();
         OTPManager.storeOTP(email, otp);
-        sendOTP(email, otp);
+        OTPManager.sendOTP(email, otp);
         sentEmailForOTP = email;
 
         new Alert(Alert.AlertType.INFORMATION, "OTP sent to your email.").show();
 
     }
-
-    public void sendOTP(String recipientEmail, String otp) {
-        final String username = "bitzlk01@gmail.com";
-        final String password = "lvgo bxrq eypr bbdc";
-        final String host = "smtp.gmail.com";
-        final int port = 587;
-
-        Properties props = new Properties();
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", host);
-        props.put("mail.smtp.port", port);
-
-        Session session = Session.getInstance(props, new Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(username, password);
-            }
-        });
-        session.setDebug(true);
-        try {
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(username));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail));
-            message.setSubject("Your OTP Code");
-            message.setText("Your OTP code is: " + otp);
-
-            Transport.send(message);
-            System.out.println("OTP sent successfully to " + recipientEmail);
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public String generateOTP() {
-        Random random = new Random();
-        int otp = 1000 + random.nextInt(9000);
-        return String.valueOf(otp);
-    }
-
-
 }

@@ -1,0 +1,86 @@
+/* Modern TableView Styling */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-table-cell-border-color: transparent;
+    -fx-padding: 5;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 10, 0, 0, 4);
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #031430;
+    -fx-background-radius: 8px 8px 0px 0px;
+    -fx-padding: 0 0 8px 0;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 35;
+    -fx-border-width: 0 0 0 0;
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", "Inter", "Roboto", sans-serif;
+    -fx-alignment: center-left;
+}
+
+.table-view .cell {
+    -fx-cell-size: 45;
+    -fx-font-family: "Segoe UI", "Inter", "Roboto", sans-serif;
+    -fx-text-fill: #333333;
+    -fx-alignment: center;
+    -fx-padding: 6 0 6 10;
+    -fx-border-color: transparent;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: #f1f1f1;
+    -fx-table-cell-border-color: transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f9fafb;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #e6f2ff;
+    -fx-text-fill: #1a56db;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #f1f5f9;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:horizontal {
+    -fx-background-color: #f9fafb;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical .thumb,
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color: #d1d5db;
+    -fx-background-radius: 5em;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical .thumb:hover,
+.table-view .virtual-flow .scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #9ca3af;
+}
+
+.jfx-button {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: white;
+    -fx-background-radius: 4px;
+    -fx-padding: 8 16;
+    -fx-font-weight: bold;
+}
+
+.jfx-button:hover {
+    -fx-background-color: #2563eb;
+}

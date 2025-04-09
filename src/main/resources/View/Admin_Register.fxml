@@ -50,7 +50,7 @@
             <Insets />
          </opaqueInsets>
       </JFXTextField>
-      <JFXButton id="btnLogin" fx:id="btnSingUpAdmin" layoutX="534.0" layoutY="481.0" onAction="#btnSingUpAdminAction" prefHeight="30.0" prefWidth="279.0" style="-fx-background-color: #000066;" text="Sign Up" textFill="WHITE">
+      <JFXButton id="btnLogin" fx:id="btnSingUpAdmin" layoutX="529.0" layoutY="525.0" onAction="#btnSingUpAdminAction" prefHeight="31.0" prefWidth="279.0" style="-fx-background-color: #000066;" text="Sign Up" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -70,7 +70,7 @@
             <Insets />
          </opaqueInsets>
       </JFXTextField>
-      <JFXTextField fx:id="txtPassword" layoutX="531.0" layoutY="426.0" prefHeight="26.0" prefWidth="279.0" promptText="Password ">
+      <JFXTextField fx:id="txtPassword" layoutX="531.0" layoutY="470.0" prefHeight="26.0" prefWidth="279.0" promptText="Password ">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -84,13 +84,16 @@
          <font>
             <Font size="1.0" />
          </font>
-         <graphic>
-            <ImageView fitHeight="44.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Image/Back.png" />
-               </image>
-            </ImageView>
-         </graphic>
+      </JFXButton>
+      <JFXTextField fx:id="txtOTP" alignment="CENTER" layoutX="532.0" layoutY="424.0" prefHeight="26.0" prefWidth="183.0" promptText="OTP">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </JFXTextField>
+      <JFXButton id="btnLogin" fx:id="btnOTP" layoutX="730.0" layoutY="426.0" onAction="#btnOTPAction" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: #000066;" text="Send" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
       </JFXButton>
    </children>
 </AnchorPane>

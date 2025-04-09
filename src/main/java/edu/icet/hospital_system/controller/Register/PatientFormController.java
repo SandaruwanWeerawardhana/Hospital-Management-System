@@ -7,6 +7,7 @@ import com.jfoenix.controls.JFXTextField;
 import edu.icet.hospital_system.dto.Patient;
 import edu.icet.hospital_system.service.ServiceFactory;
 import edu.icet.hospital_system.service.custom.PatientService;
+import edu.icet.hospital_system.util.OTPManager;
 import edu.icet.hospital_system.util.Password;
 import edu.icet.hospital_system.util.ServiceType;
 import javafx.collections.FXCollections;
@@ -28,6 +29,7 @@ import java.util.regex.Pattern;
 public class PatientFormController implements Initializable {
 
     public AnchorPane PatientAnchorePane;
+    public JFXTextField txtOTP;
     @FXML
     private JFXComboBox<String> ChoiseBoxGender;
 
@@ -59,41 +61,55 @@ public class PatientFormController implements Initializable {
 
     @FXML
     void btnSingUpAction(ActionEvent event) {
+        String enteredOtp = txtOTP.getText();
+        String generatedOtp = OTPManager.getOTP(txtEmail.getText());
 
-        if ((txtName.getText().isEmpty() && txtEmergencyContact.getText().isEmpty() && txtEmail.getText().isEmpty() &&
-                txtName.getText().isEmpty() && ChoiseBoxGender.getValue().isEmpty() && txtAge.getText().isEmpty())) {
+        if (generatedOtp == null) {
+            new Alert(Alert.AlertType.ERROR, "No OTP found for this email. Please request a new one.").show();
+            return;
+        }
 
-            new Alert(Alert.AlertType.ERROR, "Fill All Detail").show();
-        } else {
-            if (validatePhoneNumber(txtEmergencyContact.getText()) && validateEmail(txtEmail.getText())) {
-                if (isInteger(txtAge.getText())) {
-                    Patient patient = new Patient(
-                            0,
-                            txtName.getText(),
-                            Integer.parseInt(txtAge.getText()),
-                            ChoiseBoxGender.getValue(),
-                            txtMedicalHistory.getText(),
-                            txtEmergencyContact.getText(),
-                            txtEmail.getText(),
-                            Password.getInstance().encryptPassword(txtPassword.getText())
-                    );
-                    service.addPatient(patient);
-                    new Alert(Alert.AlertType.CONFIRMATION, "Added Success !").show();
 
-                    txtName.clear();
-                    txtAge.clear();
-                    ChoiseBoxGender.setValue(null);
-                    txtMedicalHistory.clear();
-                    txtEmergencyContact.clear();
-                    txtEmail.clear();
-                    txtPassword.clear();
+        if (enteredOtp.equals(generatedOtp)) {
+
+            if ((txtName.getText().isEmpty() && txtEmergencyContact.getText().isEmpty() && txtEmail.getText().isEmpty() &&
+                    txtName.getText().isEmpty() && ChoiseBoxGender.getValue().isEmpty() && txtAge.getText().isEmpty())) {
+
+                new Alert(Alert.AlertType.ERROR, "Fill All Detail").show();
+            } else {
+                if (validatePhoneNumber(txtEmergencyContact.getText()) && validateEmail(txtEmail.getText())) {
+                    if (isInteger(txtAge.getText())) {
+                        Patient patient = new Patient(
+                                0,
+                                txtName.getText(),
+                                Integer.parseInt(txtAge.getText()),
+                                ChoiseBoxGender.getValue(),
+                                txtMedicalHistory.getText(),
+                                txtEmergencyContact.getText(),
+                                txtEmail.getText(),
+                                Password.getInstance().encryptPassword(txtPassword.getText())
+                        );
+                        service.addPatient(patient);
+                        new Alert(Alert.AlertType.CONFIRMATION, "Added Success !").show();
+
+                        txtName.clear();
+                        txtAge.clear();
+                        ChoiseBoxGender.setValue(null);
+                        txtMedicalHistory.clear();
+                        txtEmergencyContact.clear();
+                        txtEmail.clear();
+                        txtOTP.clear();
+                        txtPassword.clear();
+                    } else {
+                        new Alert(Alert.AlertType.ERROR, "Input Correct Age").show();
+                    }
                 } else {
-                    new Alert(Alert.AlertType.ERROR, "Input Correct Age").show();
+                    new Alert(Alert.AlertType.WARNING, "Add Valid Detail").show();
                 }
-            }else {
-                new Alert(Alert.AlertType.WARNING, "Add Valid Detail").show();
-            }
 
+            }
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Invalid OTP. Try Again.").show();
         }
     }
 
@@ -134,10 +150,25 @@ public class PatientFormController implements Initializable {
     }
 
     private boolean validateEmail(String email) {
-
         Pattern pattern = Pattern.compile("^[^@]+@[^@]+$");
         Matcher matcher = pattern.matcher(email);
-
         return matcher.matches();
     }
+
+    public void btnSendOTPAction(ActionEvent actionEvent) {
+        String email = txtEmail.getText();
+        if (email.isEmpty()) {
+            new Alert(Alert.AlertType.ERROR, "Enter your email!").show();
+        }
+
+        String otp = OTPManager.generateOTP();
+        OTPManager.storeOTP(email, otp);
+        OTPManager.sendOTP(email, otp);
+
+
+        new Alert(Alert.AlertType.INFORMATION, "OTP sent to your email.").show();
+    }
+
+
+
 }

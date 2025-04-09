@@ -19,12 +19,12 @@
             <Image url="@../Image/login2.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="207.0" layoutX="570.0" layoutY="-26.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="200.0" fitWidth="207.0" layoutX="591.0" layoutY="-22.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Image/Logo_enhanced.png" />
          </image>
       </ImageView>
-      <Text layoutX="474.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Create Patient Account" textAlignment="CENTER" wrappingWidth="390.1368408203125">
+      <Text layoutX="496.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Thin 100;" text="Create Patient Account" textAlignment="CENTER" wrappingWidth="390.1368408203125">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -45,26 +45,32 @@
             </LinearGradient>
          </fill>
       </Text>
-      <JFXButton id="btnLogin" fx:id="btnSingUp" layoutX="548.0" layoutY="528.0" onAction="#btnSingUpAction" prefHeight="32.0" prefWidth="279.0" style="-fx-background-color: #000066;" text="Sign Up" textFill="WHITE">
+      <JFXButton id="btnLogin" fx:id="btnSingUp" layoutX="548.0" layoutY="558.0" onAction="#btnSingUpAction" prefHeight="32.0" prefWidth="279.0" style="-fx-background-color: #000066;" text="Sign Up" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <JFXComboBox fx:id="ChoiseBoxGender" layoutX="551.0" layoutY="279.0" prefHeight="26.0" prefWidth="279.0" promptText="Gender" />
-      <JFXTextField fx:id="txtName" layoutX="551.0" layoutY="187.0" prefHeight="26.0" prefWidth="279.0" promptText="Name" />
-      <JFXTextField fx:id="txtAge" layoutX="551.0" layoutY="235.0" prefHeight="26.0" prefWidth="279.0" promptText="Age" />
-      <JFXTextField fx:id="txtEmergencyContact" layoutX="551.0" layoutY="384.0" prefHeight="26.0" prefWidth="279.0" promptText="Emergency Contact" />
-      <JFXTextField fx:id="txtEmail" layoutX="551.0" layoutY="433.0" prefHeight="26.0" prefWidth="279.0" promptText="Email" />
-      <JFXTextField fx:id="txtPassword" layoutX="551.0" layoutY="483.0" prefHeight="26.0" prefWidth="279.0" promptText="Password " />
-      <JFXTextField fx:id="txtMedicalHistory" layoutX="551.0" layoutY="330.0" prefHeight="26.0" prefWidth="279.0" promptText="Medical History" />
+      <JFXComboBox fx:id="ChoiseBoxGender" layoutX="551.0" layoutY="269.0" prefHeight="26.0" prefWidth="279.0" promptText="Gender" />
+      <JFXTextField fx:id="txtName" layoutX="551.0" layoutY="179.0" prefHeight="26.0" prefWidth="279.0" promptText="Name" />
+      <JFXTextField fx:id="txtAge" layoutX="551.0" layoutY="225.0" prefHeight="26.0" prefWidth="279.0" promptText="Age" />
+      <JFXTextField fx:id="txtEmergencyContact" layoutX="551.0" layoutY="372.0" prefHeight="26.0" prefWidth="279.0" promptText="Emergency Contact" />
+      <JFXTextField fx:id="txtEmail" layoutX="551.0" layoutY="421.0" prefHeight="26.0" prefWidth="279.0" promptText="Email" />
+      <JFXTextField fx:id="txtPassword" layoutX="551.0" layoutY="506.0" prefHeight="26.0" prefWidth="279.0" promptText="Password " />
+      <JFXTextField fx:id="txtMedicalHistory" layoutX="551.0" layoutY="319.0" prefHeight="26.0" prefWidth="279.0" promptText="Medical History" />
       <JFXButton layoutX="414.0" layoutY="-1.0" onAction="#BackAction" prefHeight="48.0" prefWidth="62.0">
          <graphic>
             <ImageView fitHeight="39.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Image/back.png" />
+                  <Image url="@../Image/Back.png" />
                </image>
             </ImageView>
          </graphic>
+      </JFXButton>
+      <JFXTextField fx:id="txtOTP" alignment="CENTER" layoutX="551.0" layoutY="466.0" prefHeight="26.0" prefWidth="187.0" promptText="OTP" />
+      <JFXButton id="btnLogin" fx:id="btnSendOTP" layoutX="750.0" layoutY="475.0" onAction="#btnSendOTPAction" prefHeight="14.0" prefWidth="80.0" style="-fx-background-color: #000066;" text="Send" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
       </JFXButton>
    </children>
 </AnchorPane>
